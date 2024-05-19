@@ -14,8 +14,19 @@ namespace ims
 
         private void MDI_Load(object sender, EventArgs e)
         {
-            Login login = new Login();
-            Main.showWindow(login, this);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string connectPath = path + "\\connect";
+
+            if (File.Exists(connectPath))
+            {
+                Login login = new Login();
+                Main.showWindow(login, this);
+            }
+            else
+            {
+                Settings settings = new Settings();
+                Main.showWindow(settings, this);
+            }
         }
     }
 }

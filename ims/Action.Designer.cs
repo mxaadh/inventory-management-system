@@ -37,8 +37,10 @@
             editButton = new Button();
             groupBox1 = new GroupBox();
             textBox1 = new TextBox();
+            backBtn = new Button();
             leftPanel.SuspendLayout();
             rightPanel.SuspendLayout();
+            panel1.SuspendLayout();
             panel4.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -47,6 +49,7 @@
             // leftPanel
             // 
             leftPanel.Controls.Add(panel3);
+            leftPanel.Controls.SetChildIndex(panel1, 0);
             leftPanel.Controls.SetChildIndex(panel3, 0);
             // 
             // rightPanel
@@ -54,10 +57,15 @@
             rightPanel.Controls.Add(panel4);
             rightPanel.Controls.SetChildIndex(panel4, 0);
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(backBtn);
+            panel1.Controls.SetChildIndex(backBtn, 0);
+            // 
             // panel3
             // 
             panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 48);
+            panel3.Location = new Point(0, 50);
             panel3.Name = "panel3";
             panel3.Size = new Size(200, 50);
             panel3.TabIndex = 1;
@@ -66,7 +74,7 @@
             // 
             panel4.Controls.Add(tableLayoutPanel1);
             panel4.Dock = DockStyle.Top;
-            panel4.Location = new Point(0, 48);
+            panel4.Location = new Point(0, 50);
             panel4.Name = "panel4";
             panel4.Size = new Size(600, 50);
             panel4.TabIndex = 1;
@@ -85,11 +93,12 @@
             tableLayoutPanel1.Controls.Add(button1, 0, 0);
             tableLayoutPanel1.Controls.Add(editButton, 0, 0);
             tableLayoutPanel1.Controls.Add(groupBox1, 4, 0);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Dock = DockStyle.Top;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(600, 50);
             tableLayoutPanel1.TabIndex = 0;
             // 
@@ -151,9 +160,9 @@
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = Color.Transparent;
             tableLayoutPanel1.SetColumnSpan(groupBox1, 2);
             groupBox1.Controls.Add(textBox1);
+            groupBox1.Dock = DockStyle.Fill;
             groupBox1.Location = new Point(403, 3);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(194, 44);
@@ -169,6 +178,20 @@
             textBox1.Size = new Size(188, 23);
             textBox1.TabIndex = 0;
             // 
+            // backBtn
+            // 
+            backBtn.BackColor = SystemColors.HotTrack;
+            backBtn.Dock = DockStyle.Left;
+            backBtn.FlatAppearance.BorderSize = 0;
+            backBtn.FlatStyle = FlatStyle.Flat;
+            backBtn.ForeColor = Color.Transparent;
+            backBtn.Image = Properties.Resources.back_icon;
+            backBtn.Location = new Point(0, 0);
+            backBtn.Name = "backBtn";
+            backBtn.Size = new Size(50, 50);
+            backBtn.TabIndex = 2;
+            backBtn.UseVisualStyleBackColor = false;
+            // 
             // Action
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -177,6 +200,7 @@
             Name = "Action";
             leftPanel.ResumeLayout(false);
             rightPanel.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             panel4.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
@@ -193,6 +217,7 @@
         private Button saveButton;
         private Button deleteButton;
         private Button button1;
+        protected Button backBtn;
         private GroupBox groupBox1;
         private TextBox textBox1;
     }

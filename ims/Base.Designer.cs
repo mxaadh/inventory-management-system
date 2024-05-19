@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base));
             leftPanel = new Panel();
             panel1 = new Panel();
-            button1 = new Button();
             label1 = new Label();
             rightPanel = new Panel();
             panel2 = new Panel();
@@ -55,26 +53,12 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(button1);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 50);
             panel1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.BackgroundImageLayout = ImageLayout.Center;
-            button1.Dock = DockStyle.Left;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(0, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(50, 50);
-            button1.TabIndex = 2;
-            button1.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -138,10 +122,9 @@
 
         protected Panel leftPanel;
         protected Panel rightPanel;
-        private Panel panel1;
+        protected Panel panel1;
         private Label label1;
         private Panel panel2;
         private Label label2;
-        private Button button1;
     }
 }

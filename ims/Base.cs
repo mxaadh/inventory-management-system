@@ -16,5 +16,10 @@ namespace ims
         {
             InitializeComponent();
         }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            // Main.showWindow()
+        }
     }
 }

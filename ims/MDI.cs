@@ -28,5 +28,12 @@ namespace ims
                 Main.showWindow(settings, this);
             }
         }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            Login login = new Login();
+            Main.showWindow(settings, login, MDI.ActiveForm);
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace ims
 
             // Set parrent Window
             openWin.MdiParent = MDIWin;
-            openWin.WindowState = FormWindowState.Minimized;
+            openWin.WindowState = FormWindowState.Maximized;
             openWin.Show();
         }
 

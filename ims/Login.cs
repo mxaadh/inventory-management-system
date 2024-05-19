@@ -21,5 +21,12 @@ namespace ims
         {
 
         }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            Home home = new Home();
+            Main.showWindow(home, login, MDI.ActiveForm);
+        }
     }
 }

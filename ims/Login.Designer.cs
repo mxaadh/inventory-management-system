@@ -32,13 +32,13 @@
             usernametext = new TextBox();
             passwordText = new TextBox();
             label3 = new Label();
-            button1 = new Button();
+            loginButton = new Button();
             leftPanel.SuspendLayout();
             SuspendLayout();
             // 
             // leftPanel
             // 
-            leftPanel.Controls.Add(button1);
+            leftPanel.Controls.Add(loginButton);
             leftPanel.Controls.Add(passwordText);
             leftPanel.Controls.Add(label3);
             leftPanel.Controls.Add(usernametext);
@@ -47,7 +47,7 @@
             leftPanel.Controls.SetChildIndex(usernametext, 0);
             leftPanel.Controls.SetChildIndex(label3, 0);
             leftPanel.Controls.SetChildIndex(passwordText, 0);
-            leftPanel.Controls.SetChildIndex(button1, 0);
+            leftPanel.Controls.SetChildIndex(loginButton, 0);
             // 
             // label4
             // 
@@ -84,16 +84,17 @@
             label3.TabIndex = 5;
             label3.Text = "Password";
             // 
-            // button1
+            // loginButton
             // 
-            button1.FlatAppearance.BorderSize = 2;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(12, 247);
-            button1.Name = "button1";
-            button1.Size = new Size(180, 30);
-            button1.TabIndex = 7;
-            button1.Text = "Login";
-            button1.UseVisualStyleBackColor = true;
+            loginButton.FlatAppearance.BorderSize = 2;
+            loginButton.FlatStyle = FlatStyle.Flat;
+            loginButton.Location = new Point(12, 247);
+            loginButton.Name = "loginButton";
+            loginButton.Size = new Size(180, 30);
+            loginButton.TabIndex = 7;
+            loginButton.Text = "Login";
+            loginButton.UseVisualStyleBackColor = true;
+            loginButton.Click += loginButton_Click;
             // 
             // Login
             // 
@@ -113,6 +114,6 @@
         private TextBox usernametext;
         private TextBox passwordText;
         private Label label3;
-        private Button button1;
+        private Button loginButton;
     }
 }

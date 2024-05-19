@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace ims
 {
-    public partial class Home : Base
+    public partial class Action : Base
     {
-        public Home()
+        public Action()
         {
             InitializeComponent();
-        }
-
-        private void userButton_Click(object sender, EventArgs e)
-        {
-            Home home = new Home();
-            User user = new User();
-            Main.showWindow(user, home, MDI.ActiveForm);
         }
     }
 }

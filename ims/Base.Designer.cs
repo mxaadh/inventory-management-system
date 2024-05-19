@@ -121,7 +121,7 @@
         #endregion
 
         protected Panel leftPanel;
-        private Panel rightPanel;
+        protected Panel rightPanel;
         private Panel panel1;
         private Label label1;
         private Panel panel2;

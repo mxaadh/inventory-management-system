@@ -31,10 +31,10 @@
             panel3 = new Panel();
             panel4 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            editButton = new Button();
-            button1 = new Button();
-            deleteButton = new Button();
             saveButton = new Button();
+            deleteButton = new Button();
+            button1 = new Button();
+            editButton = new Button();
             groupBox1 = new GroupBox();
             textBox1 = new TextBox();
             leftPanel.SuspendLayout();
@@ -93,33 +93,19 @@
             tableLayoutPanel1.Size = new Size(600, 50);
             tableLayoutPanel1.TabIndex = 0;
             // 
-            // editButton
+            // saveButton
             // 
-            editButton.BackColor = SystemColors.MenuHighlight;
-            editButton.Dock = DockStyle.Fill;
-            editButton.FlatAppearance.BorderColor = SystemColors.Highlight;
-            editButton.FlatAppearance.BorderSize = 2;
-            editButton.FlatStyle = FlatStyle.Flat;
-            editButton.Location = new Point(103, 3);
-            editButton.Name = "editButton";
-            editButton.Size = new Size(94, 44);
-            editButton.TabIndex = 0;
-            editButton.Text = "Edit";
-            editButton.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.MenuHighlight;
-            button1.Dock = DockStyle.Fill;
-            button1.FlatAppearance.BorderColor = SystemColors.Highlight;
-            button1.FlatAppearance.BorderSize = 2;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(3, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 44);
-            button1.TabIndex = 1;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = false;
+            saveButton.BackColor = SystemColors.MenuHighlight;
+            saveButton.Dock = DockStyle.Fill;
+            saveButton.FlatAppearance.BorderColor = SystemColors.Highlight;
+            saveButton.FlatAppearance.BorderSize = 2;
+            saveButton.FlatStyle = FlatStyle.Flat;
+            saveButton.Location = new Point(203, 3);
+            saveButton.Name = "saveButton";
+            saveButton.Size = new Size(94, 44);
+            saveButton.TabIndex = 3;
+            saveButton.Text = "Save";
+            saveButton.UseVisualStyleBackColor = false;
             // 
             // deleteButton
             // 
@@ -135,23 +121,37 @@
             deleteButton.Text = "Detele";
             deleteButton.UseVisualStyleBackColor = false;
             // 
-            // saveButton
+            // button1
             // 
-            saveButton.BackColor = SystemColors.MenuHighlight;
-            saveButton.Dock = DockStyle.Fill;
-            saveButton.FlatAppearance.BorderColor = SystemColors.Highlight;
-            saveButton.FlatAppearance.BorderSize = 2;
-            saveButton.FlatStyle = FlatStyle.Flat;
-            saveButton.Location = new Point(203, 3);
-            saveButton.Name = "saveButton";
-            saveButton.Size = new Size(94, 44);
-            saveButton.TabIndex = 3;
-            saveButton.Text = "Save";
-            saveButton.UseVisualStyleBackColor = false;
+            button1.BackColor = SystemColors.MenuHighlight;
+            button1.Dock = DockStyle.Fill;
+            button1.FlatAppearance.BorderColor = SystemColors.Highlight;
+            button1.FlatAppearance.BorderSize = 2;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(3, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 44);
+            button1.TabIndex = 1;
+            button1.Text = "Add";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // editButton
+            // 
+            editButton.BackColor = SystemColors.MenuHighlight;
+            editButton.Dock = DockStyle.Fill;
+            editButton.FlatAppearance.BorderColor = SystemColors.Highlight;
+            editButton.FlatAppearance.BorderSize = 2;
+            editButton.FlatStyle = FlatStyle.Flat;
+            editButton.Location = new Point(103, 3);
+            editButton.Name = "editButton";
+            editButton.Size = new Size(94, 44);
+            editButton.TabIndex = 0;
+            editButton.Text = "Edit";
+            editButton.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = Color.White;
+            groupBox1.BackColor = Color.Transparent;
             tableLayoutPanel1.SetColumnSpan(groupBox1, 2);
             groupBox1.Controls.Add(textBox1);
             groupBox1.Location = new Point(403, 3);
@@ -175,7 +175,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Name = "Action";
-            Text = "Action";
             leftPanel.ResumeLayout(false);
             rightPanel.ResumeLayout(false);
             panel4.ResumeLayout(false);

@@ -25,12 +25,12 @@ namespace ims
 
         private void User_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("user loaded");
+            Main.disable(leftPanel);
         }
 
         public override void addBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("user add btn click");
+            Main.enable_reset(leftPanel);
         }
 
         public override void editBtn_Click(object sender, EventArgs e)

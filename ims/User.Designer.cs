@@ -28,28 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel5 = new Panel();
-            textBox2 = new TextBox();
-            label3 = new Label();
-            panel6 = new Panel();
-            textBox3 = new TextBox();
-            label4 = new Label();
-            panel7 = new Panel();
-            textBox4 = new TextBox();
-            label5 = new Label();
-            panel8 = new Panel();
-            textBox5 = new TextBox();
-            label6 = new Label();
-            panel9 = new Panel();
             textBox6 = new TextBox();
+            textBox5 = new TextBox();
             label7 = new Label();
+            textBox4 = new TextBox();
+            label6 = new Label();
+            textBox3 = new TextBox();
+            label5 = new Label();
+            textBox1 = new TextBox();
+            label4 = new Label();
+            label3 = new Label();
             leftPanel.SuspendLayout();
             panel1.SuspendLayout();
-            panel5.SuspendLayout();
-            panel6.SuspendLayout();
-            panel7.SuspendLayout();
-            panel8.SuspendLayout();
-            panel9.SuspendLayout();
             SuspendLayout();
             // 
             // backBtn
@@ -59,156 +49,111 @@
             // 
             // leftPanel
             // 
-            leftPanel.Controls.Add(panel9);
-            leftPanel.Controls.Add(panel8);
-            leftPanel.Controls.Add(panel7);
-            leftPanel.Controls.Add(panel6);
-            leftPanel.Controls.Add(panel5);
+            leftPanel.Controls.Add(textBox6);
+            leftPanel.Controls.Add(textBox5);
+            leftPanel.Controls.Add(label7);
+            leftPanel.Controls.Add(textBox4);
+            leftPanel.Controls.Add(label6);
+            leftPanel.Controls.Add(textBox3);
+            leftPanel.Controls.Add(label5);
+            leftPanel.Controls.Add(textBox1);
+            leftPanel.Controls.Add(label4);
+            leftPanel.Controls.Add(label3);
             leftPanel.Controls.SetChildIndex(panel1, 0);
-            leftPanel.Controls.SetChildIndex(panel5, 0);
-            leftPanel.Controls.SetChildIndex(panel6, 0);
-            leftPanel.Controls.SetChildIndex(panel7, 0);
-            leftPanel.Controls.SetChildIndex(panel8, 0);
-            leftPanel.Controls.SetChildIndex(panel9, 0);
+            leftPanel.Controls.SetChildIndex(label3, 0);
+            leftPanel.Controls.SetChildIndex(label4, 0);
+            leftPanel.Controls.SetChildIndex(textBox1, 0);
+            leftPanel.Controls.SetChildIndex(label5, 0);
+            leftPanel.Controls.SetChildIndex(textBox3, 0);
+            leftPanel.Controls.SetChildIndex(label6, 0);
+            leftPanel.Controls.SetChildIndex(textBox4, 0);
+            leftPanel.Controls.SetChildIndex(label7, 0);
+            leftPanel.Controls.SetChildIndex(textBox5, 0);
+            leftPanel.Controls.SetChildIndex(textBox6, 0);
             // 
             // panel1
             // 
             panel1.Location = new Point(0, 67);
             // 
-            // panel5
+            // textBox6
             // 
-            panel5.Controls.Add(textBox2);
-            panel5.Controls.Add(label3);
-            panel5.Location = new Point(12, 137);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(211, 47);
-            panel5.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            textBox2.Dock = DockStyle.Bottom;
-            textBox2.Location = new Point(0, 20);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(211, 27);
-            textBox2.TabIndex = 1;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Dock = DockStyle.Top;
-            label3.Location = new Point(0, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(49, 20);
-            label3.TabIndex = 0;
-            label3.Text = "Name";
-            // 
-            // panel6
-            // 
-            panel6.Controls.Add(textBox3);
-            panel6.Controls.Add(label4);
-            panel6.Location = new Point(12, 190);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(211, 47);
-            panel6.TabIndex = 3;
-            // 
-            // textBox3
-            // 
-            textBox3.Dock = DockStyle.Bottom;
-            textBox3.Location = new Point(0, 20);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(211, 27);
-            textBox3.TabIndex = 1;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Dock = DockStyle.Top;
-            label4.Location = new Point(0, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(75, 20);
-            label4.TabIndex = 0;
-            label4.Text = "Username";
-            // 
-            // panel7
-            // 
-            panel7.Controls.Add(textBox4);
-            panel7.Controls.Add(label5);
-            panel7.Location = new Point(12, 243);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(211, 47);
-            panel7.TabIndex = 3;
-            // 
-            // textBox4
-            // 
-            textBox4.Dock = DockStyle.Bottom;
-            textBox4.Location = new Point(0, 20);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(211, 27);
-            textBox4.TabIndex = 1;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Dock = DockStyle.Top;
-            label5.Location = new Point(0, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(70, 20);
-            label5.TabIndex = 0;
-            label5.Text = "Password";
-            // 
-            // panel8
-            // 
-            panel8.Controls.Add(textBox5);
-            panel8.Controls.Add(label6);
-            panel8.Location = new Point(12, 296);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(211, 47);
-            panel8.TabIndex = 4;
+            textBox6.Location = new Point(12, 379);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(211, 27);
+            textBox6.TabIndex = 7;
             // 
             // textBox5
             // 
-            textBox5.Dock = DockStyle.Bottom;
-            textBox5.Location = new Point(0, 20);
+            textBox5.Location = new Point(12, 326);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(211, 27);
-            textBox5.TabIndex = 1;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Dock = DockStyle.Top;
-            label6.Location = new Point(0, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(46, 20);
-            label6.TabIndex = 0;
-            label6.Text = "Email";
-            // 
-            // panel9
-            // 
-            panel9.Controls.Add(textBox6);
-            panel9.Controls.Add(label7);
-            panel9.Location = new Point(12, 349);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(211, 47);
-            panel9.TabIndex = 3;
-            // 
-            // textBox6
-            // 
-            textBox6.Dock = DockStyle.Bottom;
-            textBox6.Location = new Point(0, 20);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(211, 27);
-            textBox6.TabIndex = 1;
+            textBox5.TabIndex = 8;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Dock = DockStyle.Top;
-            label7.Location = new Point(0, 0);
+            label7.Location = new Point(12, 356);
             label7.Name = "label7";
             label7.Size = new Size(50, 20);
-            label7.TabIndex = 0;
+            label7.TabIndex = 2;
             label7.Text = "Phone";
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(12, 273);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(211, 27);
+            textBox4.TabIndex = 9;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(13, 303);
+            label6.Name = "label6";
+            label6.Size = new Size(46, 20);
+            label6.TabIndex = 3;
+            label6.Text = "Email";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(12, 220);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(211, 27);
+            textBox3.TabIndex = 10;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(12, 250);
+            label5.Name = "label5";
+            label5.Size = new Size(70, 20);
+            label5.TabIndex = 4;
+            label5.Text = "Password";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(12, 167);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(211, 27);
+            textBox1.TabIndex = 11;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(12, 197);
+            label4.Name = "label4";
+            label4.Size = new Size(75, 20);
+            label4.TabIndex = 5;
+            label4.Text = "Username";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(13, 144);
+            label3.Name = "label3";
+            label3.Size = new Size(49, 20);
+            label3.TabIndex = 6;
+            label3.Text = "Name";
             // 
             // User
             // 
@@ -220,36 +165,22 @@
             Text = "User";
             Load += User_Load;
             leftPanel.ResumeLayout(false);
+            leftPanel.PerformLayout();
             panel1.ResumeLayout(false);
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
-            panel8.ResumeLayout(false);
-            panel8.PerformLayout();
-            panel9.ResumeLayout(false);
-            panel9.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel5;
-        private TextBox textBox2;
-        private Label label3;
-        private Panel panel9;
         private TextBox textBox6;
-        private Label label7;
-        private Panel panel8;
         private TextBox textBox5;
-        private Label label6;
-        private Panel panel7;
+        private Label label7;
         private TextBox textBox4;
-        private Label label5;
-        private Panel panel6;
+        private Label label6;
         private TextBox textBox3;
+        private Label label5;
+        private TextBox textBox1;
         private Label label4;
+        private Label label3;
     }
 }

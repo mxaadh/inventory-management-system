@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             panel5 = new Panel();
-            label3 = new Label();
             textBox2 = new TextBox();
+            label3 = new Label();
             panel6 = new Panel();
             textBox3 = new TextBox();
             label4 = new Label();
@@ -71,6 +71,10 @@
             leftPanel.Controls.SetChildIndex(panel8, 0);
             leftPanel.Controls.SetChildIndex(panel9, 0);
             // 
+            // panel1
+            // 
+            panel1.Location = new Point(0, 67);
+            // 
             // panel5
             // 
             panel5.Controls.Add(textBox2);
@@ -79,6 +83,14 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(211, 47);
             panel5.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            textBox2.Dock = DockStyle.Bottom;
+            textBox2.Location = new Point(0, 20);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(211, 27);
+            textBox2.TabIndex = 1;
             // 
             // label3
             // 
@@ -89,14 +101,6 @@
             label3.Size = new Size(49, 20);
             label3.TabIndex = 0;
             label3.Text = "Name";
-            // 
-            // textBox2
-            // 
-            textBox2.Dock = DockStyle.Bottom;
-            textBox2.Location = new Point(0, 20);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(211, 27);
-            textBox2.TabIndex = 1;
             // 
             // panel6
             // 
@@ -214,6 +218,7 @@
             Margin = new Padding(3, 7, 3, 7);
             Name = "User";
             Text = "User";
+            Load += User_Load;
             leftPanel.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel5.ResumeLayout(false);

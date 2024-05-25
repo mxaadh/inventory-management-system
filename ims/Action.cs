@@ -16,5 +16,30 @@ namespace ims
         {
             InitializeComponent();
         }
+
+        public virtual void addBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public virtual void editBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public virtual void saveBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public virtual void deleteBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public virtual void searchBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

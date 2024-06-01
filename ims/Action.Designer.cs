@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel3 = new Panel();
             panel4 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             saveBtn = new Button();
@@ -46,12 +45,6 @@
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // leftPanel
-            // 
-            leftPanel.Controls.Add(panel3);
-            leftPanel.Controls.SetChildIndex(panel1, 0);
-            leftPanel.Controls.SetChildIndex(panel3, 0);
-            // 
             // rightPanel
             // 
             rightPanel.Controls.Add(panel4);
@@ -62,15 +55,6 @@
             // 
             panel1.Controls.Add(backBtn);
             panel1.Controls.SetChildIndex(backBtn, 0);
-            // 
-            // panel3
-            // 
-            panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 67);
-            panel3.Margin = new Padding(3, 4, 3, 4);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(229, 67);
-            panel3.TabIndex = 1;
             // 
             // panel4
             // 
@@ -227,8 +211,6 @@
         }
 
         #endregion
-
-        private Panel panel3;
         private Panel panel4;
         private TableLayoutPanel tableLayoutPanel1;
         private Button editBtn;

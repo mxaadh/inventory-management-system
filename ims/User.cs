@@ -12,6 +12,7 @@ namespace ims
 {
     public partial class User : Action
     {
+        int edit = 0; 
         public User()
         {
             InitializeComponent();
@@ -31,11 +32,12 @@ namespace ims
         public override void addBtn_Click(object sender, EventArgs e)
         {
             Main.enable_reset(leftPanel);
+            edit = 0;
         }
 
         public override void editBtn_Click(object sender, EventArgs e)
         {
-
+            edit = 1;
         }
 
         public override void saveBtn_Click(object sender, EventArgs e)

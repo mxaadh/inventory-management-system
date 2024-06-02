@@ -28,16 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
+            phoneTxt = new TextBox();
+            emailTxt = new TextBox();
             label7 = new Label();
-            textBox4 = new TextBox();
+            passwordTxt = new TextBox();
             label6 = new Label();
-            textBox3 = new TextBox();
+            usernameTxt = new TextBox();
             label5 = new Label();
-            textBox1 = new TextBox();
+            nameTxt = new TextBox();
             label4 = new Label();
             label3 = new Label();
+            panel3 = new Panel();
+            nameErrorLabel = new Label();
+            usernameErrorLabel = new Label();
+            passwordErrorLabel = new Label();
+            emailErrorLabel = new Label();
+            phoneErrorLabel = new Label();
             leftPanel.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -49,45 +55,53 @@
             // 
             // leftPanel
             // 
-            leftPanel.Controls.Add(textBox6);
-            leftPanel.Controls.Add(textBox5);
+            leftPanel.Controls.Add(panel3);
+            leftPanel.Controls.Add(phoneTxt);
+            leftPanel.Controls.Add(emailTxt);
             leftPanel.Controls.Add(label7);
-            leftPanel.Controls.Add(textBox4);
+            leftPanel.Controls.Add(passwordTxt);
             leftPanel.Controls.Add(label6);
-            leftPanel.Controls.Add(textBox3);
+            leftPanel.Controls.Add(usernameTxt);
             leftPanel.Controls.Add(label5);
-            leftPanel.Controls.Add(textBox1);
+            leftPanel.Controls.Add(nameTxt);
             leftPanel.Controls.Add(label4);
             leftPanel.Controls.Add(label3);
+            leftPanel.Controls.Add(nameErrorLabel);
+            leftPanel.Controls.Add(usernameErrorLabel);
+            leftPanel.Controls.Add(passwordErrorLabel);
+            leftPanel.Controls.Add(emailErrorLabel);
+            leftPanel.Controls.Add(phoneErrorLabel);
+            leftPanel.Controls.SetChildIndex(phoneErrorLabel, 0);
+            leftPanel.Controls.SetChildIndex(emailErrorLabel, 0);
+            leftPanel.Controls.SetChildIndex(passwordErrorLabel, 0);
+            leftPanel.Controls.SetChildIndex(usernameErrorLabel, 0);
+            leftPanel.Controls.SetChildIndex(nameErrorLabel, 0);
             leftPanel.Controls.SetChildIndex(panel1, 0);
             leftPanel.Controls.SetChildIndex(label3, 0);
             leftPanel.Controls.SetChildIndex(label4, 0);
-            leftPanel.Controls.SetChildIndex(textBox1, 0);
+            leftPanel.Controls.SetChildIndex(nameTxt, 0);
             leftPanel.Controls.SetChildIndex(label5, 0);
-            leftPanel.Controls.SetChildIndex(textBox3, 0);
+            leftPanel.Controls.SetChildIndex(usernameTxt, 0);
             leftPanel.Controls.SetChildIndex(label6, 0);
-            leftPanel.Controls.SetChildIndex(textBox4, 0);
+            leftPanel.Controls.SetChildIndex(passwordTxt, 0);
             leftPanel.Controls.SetChildIndex(label7, 0);
-            leftPanel.Controls.SetChildIndex(textBox5, 0);
-            leftPanel.Controls.SetChildIndex(textBox6, 0);
+            leftPanel.Controls.SetChildIndex(emailTxt, 0);
+            leftPanel.Controls.SetChildIndex(phoneTxt, 0);
+            leftPanel.Controls.SetChildIndex(panel3, 0);
             // 
-            // panel1
+            // phoneTxt
             // 
-            panel1.Location = new Point(0, 67);
+            phoneTxt.Location = new Point(12, 379);
+            phoneTxt.Name = "phoneTxt";
+            phoneTxt.Size = new Size(211, 27);
+            phoneTxt.TabIndex = 7;
             // 
-            // textBox6
+            // emailTxt
             // 
-            textBox6.Location = new Point(12, 379);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(211, 27);
-            textBox6.TabIndex = 7;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(12, 326);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(211, 27);
-            textBox5.TabIndex = 8;
+            emailTxt.Location = new Point(12, 326);
+            emailTxt.Name = "emailTxt";
+            emailTxt.Size = new Size(211, 27);
+            emailTxt.TabIndex = 8;
             // 
             // label7
             // 
@@ -98,12 +112,12 @@
             label7.TabIndex = 2;
             label7.Text = "Phone";
             // 
-            // textBox4
+            // passwordTxt
             // 
-            textBox4.Location = new Point(12, 273);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(211, 27);
-            textBox4.TabIndex = 9;
+            passwordTxt.Location = new Point(12, 273);
+            passwordTxt.Name = "passwordTxt";
+            passwordTxt.Size = new Size(211, 27);
+            passwordTxt.TabIndex = 9;
             // 
             // label6
             // 
@@ -114,12 +128,12 @@
             label6.TabIndex = 3;
             label6.Text = "Email";
             // 
-            // textBox3
+            // usernameTxt
             // 
-            textBox3.Location = new Point(12, 220);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(211, 27);
-            textBox3.TabIndex = 10;
+            usernameTxt.Location = new Point(12, 220);
+            usernameTxt.Name = "usernameTxt";
+            usernameTxt.Size = new Size(211, 27);
+            usernameTxt.TabIndex = 10;
             // 
             // label5
             // 
@@ -130,12 +144,12 @@
             label5.TabIndex = 4;
             label5.Text = "Password";
             // 
-            // textBox1
+            // nameTxt
             // 
-            textBox1.Location = new Point(12, 167);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(211, 27);
-            textBox1.TabIndex = 11;
+            nameTxt.Location = new Point(12, 167);
+            nameTxt.Name = "nameTxt";
+            nameTxt.Size = new Size(211, 27);
+            nameTxt.TabIndex = 11;
             // 
             // label4
             // 
@@ -155,6 +169,74 @@
             label3.TabIndex = 6;
             label3.Text = "Name";
             // 
+            // panel3
+            // 
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(0, 67);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(229, 67);
+            panel3.TabIndex = 12;
+            // 
+            // nameErrorLabel
+            // 
+            nameErrorLabel.AutoSize = true;
+            nameErrorLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            nameErrorLabel.ForeColor = Color.LightCoral;
+            nameErrorLabel.Location = new Point(54, 137);
+            nameErrorLabel.Name = "nameErrorLabel";
+            nameErrorLabel.Size = new Size(29, 38);
+            nameErrorLabel.TabIndex = 13;
+            nameErrorLabel.Text = "*";
+            nameErrorLabel.Visible = false;
+            // 
+            // usernameErrorLabel
+            // 
+            usernameErrorLabel.AutoSize = true;
+            usernameErrorLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            usernameErrorLabel.ForeColor = Color.LightCoral;
+            usernameErrorLabel.Location = new Point(80, 189);
+            usernameErrorLabel.Name = "usernameErrorLabel";
+            usernameErrorLabel.Size = new Size(29, 38);
+            usernameErrorLabel.TabIndex = 14;
+            usernameErrorLabel.Text = "*";
+            usernameErrorLabel.Visible = false;
+            // 
+            // passwordErrorLabel
+            // 
+            passwordErrorLabel.AutoSize = true;
+            passwordErrorLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            passwordErrorLabel.ForeColor = Color.LightCoral;
+            passwordErrorLabel.Location = new Point(75, 243);
+            passwordErrorLabel.Name = "passwordErrorLabel";
+            passwordErrorLabel.Size = new Size(29, 38);
+            passwordErrorLabel.TabIndex = 15;
+            passwordErrorLabel.Text = "*";
+            passwordErrorLabel.Visible = false;
+            // 
+            // emailErrorLabel
+            // 
+            emailErrorLabel.AutoSize = true;
+            emailErrorLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            emailErrorLabel.ForeColor = Color.LightCoral;
+            emailErrorLabel.Location = new Point(52, 296);
+            emailErrorLabel.Name = "emailErrorLabel";
+            emailErrorLabel.Size = new Size(29, 38);
+            emailErrorLabel.TabIndex = 16;
+            emailErrorLabel.Text = "*";
+            emailErrorLabel.Visible = false;
+            // 
+            // phoneErrorLabel
+            // 
+            phoneErrorLabel.AutoSize = true;
+            phoneErrorLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            phoneErrorLabel.ForeColor = Color.LightCoral;
+            phoneErrorLabel.Location = new Point(54, 350);
+            phoneErrorLabel.Name = "phoneErrorLabel";
+            phoneErrorLabel.Size = new Size(29, 38);
+            phoneErrorLabel.TabIndex = 17;
+            phoneErrorLabel.Text = "*";
+            phoneErrorLabel.Visible = false;
+            // 
             // User
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -172,15 +254,21 @@
 
         #endregion
 
-        private TextBox textBox6;
-        private TextBox textBox5;
+        private TextBox phoneTxt;
+        private TextBox emailTxt;
         private Label label7;
-        private TextBox textBox4;
+        private TextBox passwordTxt;
         private Label label6;
-        private TextBox textBox3;
+        private TextBox usernameTxt;
         private Label label5;
-        private TextBox textBox1;
+        private TextBox nameTxt;
         private Label label4;
         private Label label3;
+        private Panel panel3;
+        private Label nameErrorLabel;
+        private Label usernameErrorLabel;
+        private Label passwordErrorLabel;
+        private Label emailErrorLabel;
+        private Label phoneErrorLabel;
     }
 }

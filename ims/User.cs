@@ -42,7 +42,27 @@ namespace ims
 
         public override void saveBtn_Click(object sender, EventArgs e)
         {
+            nameErrorLabel.Visible = (nameTxt.Text == "") ? true : false;
+            usernameErrorLabel.Visible = (usernameTxt.Text == "") ? true : false;
+            passwordErrorLabel.Visible = (passwordTxt.Text == "") ? true : false;
+            emailErrorLabel.Visible = (emailTxt.Text == "") ? true : false;
+            phoneErrorLabel.Visible = (phoneTxt.Text == "") ? true : false;
 
+            if (nameErrorLabel.Visible || usernameErrorLabel.Visible || passwordErrorLabel.Visible || emailErrorLabel.Visible || phoneErrorLabel.Visible)
+            {
+                Main.ShowMSG("Fields with * are medatory", "Stop", "Error");
+            }
+            else
+            {
+                if (edit == 0)
+                {
+                    // Insert Data
+                }
+                else if (edit == 1)
+                {
+                    // Update Data
+                }
+            }
         }
 
         public override void deleteBtn_Click(object sender, EventArgs e)

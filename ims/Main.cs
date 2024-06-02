@@ -4,11 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ims
 {
     internal class Main
     {
+        private static string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        private static string s = File.ReadAllText(path+"\\connect");
+        public static SqlConnection con = new SqlConnection(s);
+
         public static void showWindow(Form openWin, Form hideWin, Form MDIWin) 
         {
             hideWin.Close();
@@ -140,6 +145,19 @@ namespace ims
                     CheckBox cb = (CheckBox)c;
                     cb.Enabled = true;
                 }
+            }
+        }
+
+        public static DialogResult ShowMSG(string msg, string heading, string type)
+        {
+            if (type == "Success")
+            {
+                return MessageBox.Show(msg, heading, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                return MessageBox.Show(msg, heading, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
     }

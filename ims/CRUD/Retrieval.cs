@@ -18,11 +18,21 @@ namespace ims.CRUD
             DataGridViewColumn passGV,
             DataGridViewColumn emailGV, 
             DataGridViewColumn phoneGV, 
-            DataGridViewColumn statusGV
+            DataGridViewColumn statusGV,
+            string? q = null
         ) {
             try
             {
-                SqlCommand cmd = new SqlCommand("st_getUsersData", Main.con);
+                SqlCommand cmd;
+                if (q == null)
+                {
+                    cmd = new SqlCommand("st_getUsersData", Main.con);
+                }
+                else
+                {
+                    cmd = new SqlCommand("st_searchUsersData", Main.con);
+                    cmd.Parameters.AddWithValue("@q", q);
+                }
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 

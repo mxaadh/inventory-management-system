@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ims.CRUD;
 
 namespace ims
 {
@@ -57,17 +58,23 @@ namespace ims
                 if (edit == 0)
                 {
                     // Insert Data
+                    // DialogResult dialogResult = MessageBox.Show(Main.con.State);
+                    Insertion insertion = new Insertion();
+                    insertion.InsertUser(nameTxt.Text, usernameTxt.Text, passwordTxt.Text, emailTxt.Text, phoneTxt.Text);
                 }
                 else if (edit == 1)
                 {
                     // Update Data
+                    // Updation updation = new Updation();
+                    // updation.UpdateUser(0, nameTxt.Text, usernameTxt.Text, passwordTxt.Text, emailTxt.Text, phoneTxt.Text);
                 }
             }
         }
 
         public override void deleteBtn_Click(object sender, EventArgs e)
         {
-
+            // Deletion deletion = new Deletion();
+            // deletion.Delete("st_deleteUsers", "@_id", 0);
         }
 
         public override void searchBox_TextChanged(object sender, EventArgs e)

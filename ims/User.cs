@@ -13,7 +13,9 @@ namespace ims
 {
     public partial class User : Action
     {
-        int edit = 0; 
+        int edit = 0;
+        private Retrieval retrieval = new Retrieval();
+
         public User()
         {
             InitializeComponent();
@@ -28,6 +30,7 @@ namespace ims
         private void User_Load(object sender, EventArgs e)
         {
             Main.disable(leftPanel);
+            retrieval.showUser(dataGridView1, userIDGV, NameGV, UserNameGV, PassGV, EmailGV, PhoneGV, StatusGV);
         }
 
         public override void addBtn_Click(object sender, EventArgs e)
@@ -58,9 +61,10 @@ namespace ims
                 if (edit == 0)
                 {
                     // Insert Data
-                    // DialogResult dialogResult = MessageBox.Show(Main.con.State);
                     Insertion insertion = new Insertion();
                     insertion.InsertUser(nameTxt.Text, usernameTxt.Text, passwordTxt.Text, emailTxt.Text, phoneTxt.Text);
+                    retrieval.showUser(dataGridView1, userIDGV, NameGV, UserNameGV, PassGV, EmailGV, PhoneGV, StatusGV);
+                    Main.disable_reset(leftPanel);
                 }
                 else if (edit == 1)
                 {

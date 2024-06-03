@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             phoneTxt = new TextBox();
             emailTxt = new TextBox();
             label7 = new Label();
@@ -44,8 +45,18 @@
             passwordErrorLabel = new Label();
             emailErrorLabel = new Label();
             phoneErrorLabel = new Label();
+            dataGridView1 = new DataGridView();
+            userIDGV = new DataGridViewTextBoxColumn();
+            NameGV = new DataGridViewTextBoxColumn();
+            UserNameGV = new DataGridViewTextBoxColumn();
+            PassGV = new DataGridViewTextBoxColumn();
+            EmailGV = new DataGridViewTextBoxColumn();
+            PhoneGV = new DataGridViewTextBoxColumn();
+            StatusGV = new DataGridViewTextBoxColumn();
             leftPanel.SuspendLayout();
+            rightPanel.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // backBtn
@@ -88,6 +99,11 @@
             leftPanel.Controls.SetChildIndex(emailTxt, 0);
             leftPanel.Controls.SetChildIndex(phoneTxt, 0);
             leftPanel.Controls.SetChildIndex(panel3, 0);
+            // 
+            // rightPanel
+            // 
+            rightPanel.Controls.Add(dataGridView1);
+            rightPanel.Controls.SetChildIndex(dataGridView1, 0);
             // 
             // phoneTxt
             // 
@@ -237,6 +253,82 @@
             phoneErrorLabel.Text = "*";
             phoneErrorLabel.Visible = false;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { userIDGV, NameGV, UserNameGV, PassGV, EmailGV, PhoneGV, StatusGV });
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(0, 134);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(685, 466);
+            dataGridView1.TabIndex = 2;
+            // 
+            // userIDGV
+            // 
+            userIDGV.HeaderText = "User ID";
+            userIDGV.MinimumWidth = 6;
+            userIDGV.Name = "userIDGV";
+            userIDGV.ReadOnly = true;
+            userIDGV.Visible = false;
+            // 
+            // NameGV
+            // 
+            NameGV.HeaderText = "Name";
+            NameGV.MinimumWidth = 6;
+            NameGV.Name = "NameGV";
+            NameGV.ReadOnly = true;
+            // 
+            // UserNameGV
+            // 
+            UserNameGV.HeaderText = "Username";
+            UserNameGV.MinimumWidth = 6;
+            UserNameGV.Name = "UserNameGV";
+            UserNameGV.ReadOnly = true;
+            // 
+            // PassGV
+            // 
+            PassGV.HeaderText = "Password";
+            PassGV.MinimumWidth = 6;
+            PassGV.Name = "PassGV";
+            PassGV.ReadOnly = true;
+            // 
+            // EmailGV
+            // 
+            EmailGV.HeaderText = "Email";
+            EmailGV.MinimumWidth = 6;
+            EmailGV.Name = "EmailGV";
+            EmailGV.ReadOnly = true;
+            // 
+            // PhoneGV
+            // 
+            PhoneGV.HeaderText = "Phoen";
+            PhoneGV.MinimumWidth = 6;
+            PhoneGV.Name = "PhoneGV";
+            PhoneGV.ReadOnly = true;
+            // 
+            // StatusGV
+            // 
+            StatusGV.HeaderText = "Status";
+            StatusGV.MinimumWidth = 6;
+            StatusGV.Name = "StatusGV";
+            StatusGV.ReadOnly = true;
+            // 
             // User
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -248,7 +340,9 @@
             Load += User_Load;
             leftPanel.ResumeLayout(false);
             leftPanel.PerformLayout();
+            rightPanel.ResumeLayout(false);
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -270,5 +364,13 @@
         private Label passwordErrorLabel;
         private Label emailErrorLabel;
         private Label phoneErrorLabel;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn userIDGV;
+        private DataGridViewTextBoxColumn NameGV;
+        private DataGridViewTextBoxColumn UserNameGV;
+        private DataGridViewTextBoxColumn PassGV;
+        private DataGridViewTextBoxColumn EmailGV;
+        private DataGridViewTextBoxColumn PhoneGV;
+        private DataGridViewTextBoxColumn StatusGV;
     }
 }

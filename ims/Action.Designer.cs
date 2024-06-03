@@ -235,7 +235,7 @@
         private Button addBtn;
         protected Button backBtn;
         private GroupBox groupBox1;
-        private TextBox searchBox;
+        protected TextBox searchBox;
         private Button viewBtn;
     }
 }

@@ -21,6 +21,7 @@ namespace ims.CRUD
             DataGridViewColumn statusGV,
             string? q = null
         ) {
+           
             try
             {
                 SqlCommand cmd;
@@ -30,10 +31,11 @@ namespace ims.CRUD
                 }
                 else
                 {
+                    MessageBox.Show("asdf >> " + q);
                     cmd = new SqlCommand("st_searchUsersData", Main.con);
-                    cmd.Parameters.AddWithValue("@q", q);
+                    cmd.Parameters.AddWithValue("@_q", q);
                 }
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 
                 DataTable dt = new DataTable();
@@ -45,9 +47,10 @@ namespace ims.CRUD
                 emailGV.DataPropertyName = dt.Columns["Email"].ToString();
                 phoneGV.DataPropertyName = dt.Columns["Phone"].ToString();
                 statusGV.DataPropertyName = dt.Columns["Status"].ToString();
+                
 
                 gv.DataSource = dt;
-            } catch(Exception ex)
+            } catch(Exception)
             {
 
             }

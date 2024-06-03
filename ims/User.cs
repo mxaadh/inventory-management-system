@@ -109,7 +109,15 @@ namespace ims
 
         public override void searchBox_TextChanged(object sender, EventArgs e)
         {
-
+            if (searchBox.Text != string.Empty)
+            {
+                MessageBox.Show(searchBox.Text);
+                retrieval.showUser(dataGridView1, userIDGV, NameGV, UserNameGV, PassGV, EmailGV, PhoneGV, StatusGV, searchBox.Text);
+            }
+            else
+            {
+                retrieval.showUser(dataGridView1, userIDGV, NameGV, UserNameGV, PassGV, EmailGV, PhoneGV, StatusGV);
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

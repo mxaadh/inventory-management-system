@@ -14,7 +14,7 @@ namespace ims
         private static string s = File.ReadAllText(path+"\\connect");
         public static SqlConnection con = new SqlConnection(s);
 
-        public static void showWindow(Form openWin, Form hideWin, Form MDIWin) 
+        public static void showWindow(Form openWin, Form hideWin, Form? MDIWin) 
         {
             hideWin.Close();
 

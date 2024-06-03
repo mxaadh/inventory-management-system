@@ -41,5 +41,10 @@ namespace ims
         {
 
         }
+
+        public virtual void viewBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -6,9 +6,13 @@ namespace ims.CRUD
     internal class Insertion
     {
         public Insertion() => Main.con.Open();
-        ~Insertion() => Main.con.Close();
+        // ~Insertion()
+        // {
+        //     Main.con.Close();
+        //     MessageBox.Show("destructor called");
+        // }
 
-        public bool InsertUser(string name, string username, string password, string email, string phone)
+        public bool InsertUser(string name, string username, string password, string email, string phone, Int16 status)
         {
             try
             {
@@ -17,9 +21,11 @@ namespace ims.CRUD
                 cmd.Parameters.AddWithValue("@_usr_name", name);
                 cmd.Parameters.AddWithValue("@_usr_username", username);
                 cmd.Parameters.AddWithValue("@_usr_password", password);
-                cmd.Parameters.AddWithValue("@_usr_phone", email);
-                cmd.Parameters.AddWithValue("@_usr_email", phone);
+                cmd.Parameters.AddWithValue("@_usr_phone", phone);
+                cmd.Parameters.AddWithValue("@_usr_email", email);
+                cmd.Parameters.AddWithValue("@_usr_status", status);
                 cmd.ExecuteNonQuery();
+                Main.con.Close();
                 Main.ShowMSG("User Inserted Successfully", "Success", "Success");
                 return true;
             }

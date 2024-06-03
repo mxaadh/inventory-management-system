@@ -11,7 +11,7 @@ namespace ims.CRUD
     internal class Deletion
     {
         public Deletion() => Main.con.Open();
-        ~Deletion() => Main.con.Close();
+        // ~Deletion() => Main.con.Close();
 
         public bool Delete(string procedure, string key, int value)
         {
@@ -21,6 +21,7 @@ namespace ims.CRUD
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue(key, value);
                 cmd.ExecuteNonQuery();
+                Main.con.Close();
                 Main.ShowMSG("Data Deleted Successfully", "Success", "Success");
                 return true;
             }

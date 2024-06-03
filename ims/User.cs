@@ -13,8 +13,9 @@ namespace ims
 {
     public partial class User : Action
     {
-        int edit = 0;
+        private int edit = 0;
         private Retrieval retrieval = new Retrieval();
+        private int userID;
 
         public User()
         {
@@ -30,7 +31,6 @@ namespace ims
         private void User_Load(object sender, EventArgs e)
         {
             Main.disable(leftPanel);
-            retrieval.showUser(dataGridView1, userIDGV, NameGV, UserNameGV, PassGV, EmailGV, PhoneGV, StatusGV);
         }
 
         public override void addBtn_Click(object sender, EventArgs e)
@@ -41,6 +41,7 @@ namespace ims
 
         public override void editBtn_Click(object sender, EventArgs e)
         {
+            Main.enable(leftPanel);
             edit = 1;
         }
 
@@ -51,39 +52,82 @@ namespace ims
             passwordErrorLabel.Visible = (passwordTxt.Text == "") ? true : false;
             emailErrorLabel.Visible = (emailTxt.Text == "") ? true : false;
             phoneErrorLabel.Visible = (phoneTxt.Text == "") ? true : false;
+            statusErrorLabel.Visible = (statusDD.SelectedIndex == -1) ? true : false;
 
-            if (nameErrorLabel.Visible || usernameErrorLabel.Visible || passwordErrorLabel.Visible || emailErrorLabel.Visible || phoneErrorLabel.Visible)
+            if (nameErrorLabel.Visible || usernameErrorLabel.Visible || passwordErrorLabel.Visible || emailErrorLabel.Visible || phoneErrorLabel.Visible || statusErrorLabel.Visible)
             {
                 Main.ShowMSG("Fields with * are medatory", "Stop", "Error");
             }
             else
             {
+                short status = (short)((statusDD.SelectedIndex == 0) ? 1 : 0);
+
                 if (edit == 0)
                 {
                     // Insert Data
+                    // using (Insertion insertion = new Insertion())
+                    // {
                     Insertion insertion = new Insertion();
-                    insertion.InsertUser(nameTxt.Text, usernameTxt.Text, passwordTxt.Text, emailTxt.Text, phoneTxt.Text);
+                    insertion.InsertUser(nameTxt.Text, usernameTxt.Text, passwordTxt.Text, emailTxt.Text, phoneTxt.Text, status);
+                    // }
                     retrieval.showUser(dataGridView1, userIDGV, NameGV, UserNameGV, PassGV, EmailGV, PhoneGV, StatusGV);
                     Main.disable_reset(leftPanel);
                 }
                 else if (edit == 1)
                 {
-                    // Update Data
-                    // Updation updation = new Updation();
-                    // updation.UpdateUser(0, nameTxt.Text, usernameTxt.Text, passwordTxt.Text, emailTxt.Text, phoneTxt.Text);
+                    DialogResult dr = MessageBox.Show("Are you sure you want to update record?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dr == DialogResult.Yes)
+                    {
+                        // Update Data
+                        Updation updation = new Updation();
+                        updation.UpdateUser(userID, nameTxt.Text, usernameTxt.Text, passwordTxt.Text, emailTxt.Text, phoneTxt.Text, status);
+                        retrieval.showUser(dataGridView1, userIDGV, NameGV, UserNameGV, PassGV, EmailGV, PhoneGV, StatusGV);
+                        Main.disable_reset(leftPanel);
+                    }
                 }
             }
         }
 
         public override void deleteBtn_Click(object sender, EventArgs e)
         {
-            // Deletion deletion = new Deletion();
-            // deletion.Delete("st_deleteUsers", "@_id", 0);
+            if (edit == 1)
+            {
+                DialogResult dr = MessageBox.Show("Are you sure you want to delete record?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    Deletion deletion = new Deletion();
+                    deletion.Delete("st_deleteUsers", "@_id", userID);
+                    retrieval.showUser(dataGridView1, userIDGV, NameGV, UserNameGV, PassGV, EmailGV, PhoneGV, StatusGV);
+                }
+            }
+        }
+
+        public override void viewBtn_Click(object sender, EventArgs e)
+        {
+            retrieval.showUser(dataGridView1, userIDGV, NameGV, UserNameGV, PassGV, EmailGV, PhoneGV, StatusGV);
         }
 
         public override void searchBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Main.disable(leftPanel);
+
+            if (e.RowIndex != -1)
+            {
+                edit = 1;
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                userID = Convert.ToInt32(row.Cells["userIDGV"].Value.ToString());
+                nameTxt.Text = row.Cells["NameGV"].Value.ToString();
+                usernameTxt.Text = row.Cells["UserNameGV"].Value.ToString();
+                passwordTxt.Text = row.Cells["PassGV"].Value.ToString();
+                emailTxt.Text = row.Cells["EmailGV"].Value.ToString();
+                phoneTxt.Text = row.Cells["PhoneGV"].Value.ToString();
+                statusDD.SelectedItem = row.Cells["StatusGV"].Value.ToString();
+            }
         }
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             phoneTxt = new TextBox();
             emailTxt = new TextBox();
             label7 = new Label();
@@ -53,6 +53,9 @@
             EmailGV = new DataGridViewTextBoxColumn();
             PhoneGV = new DataGridViewTextBoxColumn();
             StatusGV = new DataGridViewTextBoxColumn();
+            label8 = new Label();
+            statusDD = new ComboBox();
+            statusErrorLabel = new Label();
             leftPanel.SuspendLayout();
             rightPanel.SuspendLayout();
             panel1.SuspendLayout();
@@ -66,6 +69,8 @@
             // 
             // leftPanel
             // 
+            leftPanel.Controls.Add(statusDD);
+            leftPanel.Controls.Add(label8);
             leftPanel.Controls.Add(panel3);
             leftPanel.Controls.Add(phoneTxt);
             leftPanel.Controls.Add(emailTxt);
@@ -82,6 +87,8 @@
             leftPanel.Controls.Add(passwordErrorLabel);
             leftPanel.Controls.Add(emailErrorLabel);
             leftPanel.Controls.Add(phoneErrorLabel);
+            leftPanel.Controls.Add(statusErrorLabel);
+            leftPanel.Controls.SetChildIndex(statusErrorLabel, 0);
             leftPanel.Controls.SetChildIndex(phoneErrorLabel, 0);
             leftPanel.Controls.SetChildIndex(emailErrorLabel, 0);
             leftPanel.Controls.SetChildIndex(passwordErrorLabel, 0);
@@ -99,6 +106,8 @@
             leftPanel.Controls.SetChildIndex(emailTxt, 0);
             leftPanel.Controls.SetChildIndex(phoneTxt, 0);
             leftPanel.Controls.SetChildIndex(panel3, 0);
+            leftPanel.Controls.SetChildIndex(label8, 0);
+            leftPanel.Controls.SetChildIndex(statusDD, 0);
             // 
             // rightPanel
             // 
@@ -260,14 +269,14 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { userIDGV, NameGV, UserNameGV, PassGV, EmailGV, PhoneGV, StatusGV });
             dataGridView1.Dock = DockStyle.Fill;
@@ -276,8 +285,10 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(685, 466);
             dataGridView1.TabIndex = 2;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // userIDGV
             // 
@@ -317,7 +328,7 @@
             // 
             // PhoneGV
             // 
-            PhoneGV.HeaderText = "Phoen";
+            PhoneGV.HeaderText = "Phone";
             PhoneGV.MinimumWidth = 6;
             PhoneGV.Name = "PhoneGV";
             PhoneGV.ReadOnly = true;
@@ -328,6 +339,36 @@
             StatusGV.MinimumWidth = 6;
             StatusGV.Name = "StatusGV";
             StatusGV.ReadOnly = true;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(12, 409);
+            label8.Name = "label8";
+            label8.Size = new Size(49, 20);
+            label8.TabIndex = 18;
+            label8.Text = "Status";
+            // 
+            // statusDD
+            // 
+            statusDD.FormattingEnabled = true;
+            statusDD.Items.AddRange(new object[] { "Active", "In-active" });
+            statusDD.Location = new Point(13, 432);
+            statusDD.Name = "statusDD";
+            statusDD.Size = new Size(210, 28);
+            statusDD.TabIndex = 19;
+            // 
+            // statusErrorLabel
+            // 
+            statusErrorLabel.AutoSize = true;
+            statusErrorLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            statusErrorLabel.ForeColor = Color.LightCoral;
+            statusErrorLabel.Location = new Point(53, 403);
+            statusErrorLabel.Name = "statusErrorLabel";
+            statusErrorLabel.Size = new Size(29, 38);
+            statusErrorLabel.TabIndex = 20;
+            statusErrorLabel.Text = "*";
+            statusErrorLabel.Visible = false;
             // 
             // User
             // 
@@ -365,6 +406,8 @@
         private Label emailErrorLabel;
         private Label phoneErrorLabel;
         private DataGridView dataGridView1;
+        private Label label8;
+        private ComboBox statusDD;
         private DataGridViewTextBoxColumn userIDGV;
         private DataGridViewTextBoxColumn NameGV;
         private DataGridViewTextBoxColumn UserNameGV;
@@ -372,5 +415,6 @@
         private DataGridViewTextBoxColumn EmailGV;
         private DataGridViewTextBoxColumn PhoneGV;
         private DataGridViewTextBoxColumn StatusGV;
+        private Label statusErrorLabel;
     }
 }

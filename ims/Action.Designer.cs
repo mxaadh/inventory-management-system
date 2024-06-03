@@ -37,6 +37,7 @@
             groupBox1 = new GroupBox();
             searchBox = new TextBox();
             backBtn = new Button();
+            viewBtn = new Button();
             leftPanel.SuspendLayout();
             rightPanel.SuspendLayout();
             panel1.SuspendLayout();
@@ -79,7 +80,8 @@
             tableLayoutPanel1.Controls.Add(deleteBtn, 0, 0);
             tableLayoutPanel1.Controls.Add(addBtn, 0, 0);
             tableLayoutPanel1.Controls.Add(editBtn, 0, 0);
-            tableLayoutPanel1.Controls.Add(groupBox1, 4, 0);
+            tableLayoutPanel1.Controls.Add(groupBox1, 5, 0);
+            tableLayoutPanel1.Controls.Add(viewBtn, 4, 0);
             tableLayoutPanel1.Dock = DockStyle.Top;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
@@ -156,14 +158,13 @@
             // 
             // groupBox1
             // 
-            tableLayoutPanel1.SetColumnSpan(groupBox1, 2);
             groupBox1.Controls.Add(searchBox);
             groupBox1.Dock = DockStyle.Fill;
-            groupBox1.Location = new Point(459, 4);
+            groupBox1.Location = new Point(573, 4);
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(223, 59);
+            groupBox1.Size = new Size(109, 59);
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             groupBox1.Text = "Search";
@@ -174,7 +175,7 @@
             searchBox.Location = new Point(3, 28);
             searchBox.Margin = new Padding(3, 4, 3, 4);
             searchBox.Name = "searchBox";
-            searchBox.Size = new Size(217, 27);
+            searchBox.Size = new Size(103, 27);
             searchBox.TabIndex = 0;
             searchBox.TextChanged += searchBox_TextChanged;
             // 
@@ -192,6 +193,21 @@
             backBtn.Size = new Size(57, 67);
             backBtn.TabIndex = 2;
             backBtn.UseVisualStyleBackColor = false;
+            // 
+            // viewBtn
+            // 
+            viewBtn.BackColor = SystemColors.MenuHighlight;
+            viewBtn.Dock = DockStyle.Fill;
+            viewBtn.FlatAppearance.BorderColor = SystemColors.HotTrack;
+            viewBtn.FlatAppearance.BorderSize = 2;
+            viewBtn.FlatStyle = FlatStyle.Flat;
+            viewBtn.Location = new Point(459, 3);
+            viewBtn.Name = "viewBtn";
+            viewBtn.Size = new Size(108, 61);
+            viewBtn.TabIndex = 5;
+            viewBtn.Text = "View";
+            viewBtn.UseVisualStyleBackColor = false;
+            viewBtn.Click += viewBtn_Click;
             // 
             // Action
             // 
@@ -220,5 +236,6 @@
         protected Button backBtn;
         private GroupBox groupBox1;
         private TextBox searchBox;
+        private Button viewBtn;
     }
 }

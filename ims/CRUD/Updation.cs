@@ -11,9 +11,9 @@ namespace ims.CRUD
     internal class Updation
     {
         public Updation() => Main.con.Open();
-        ~Updation() => Main.con.Close();
+        // ~Updation() => Main.con.Close();
 
-        public bool UpdateUser(int id, string name, string username, string password, string email, string phone)
+        public bool UpdateUser(int id, string name, string username, string password, string email, string phone, Int16 status)
         {
             try
             {
@@ -24,8 +24,10 @@ namespace ims.CRUD
                 cmd.Parameters.AddWithValue("@_usr_password", password);
                 cmd.Parameters.AddWithValue("@_usr_phone", email);
                 cmd.Parameters.AddWithValue("@_usr_email", phone);
+                cmd.Parameters.AddWithValue("@_usr_status", status);
                 cmd.Parameters.AddWithValue("@_id", id);
                 cmd.ExecuteNonQuery();
+                Main.con.Close();
                 Main.ShowMSG("User Updated Successfully", "Success", "Success");
                 return true;
             }

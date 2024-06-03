@@ -23,5 +23,19 @@ namespace ims
             User user = new User();
             Main.showWindow(user, home, MDI.ActiveForm);
         }
+
+        private void productButton_Click(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            User user = new User();
+            Main.showWindow(user, home, MDI.ActiveForm);
+        }
+
+        private void categoryButton_Click(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            User user = new User();
+            Main.showWindow(user, home, MDI.ActiveForm);
+        }
     }
 }

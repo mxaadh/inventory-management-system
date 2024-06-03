@@ -47,8 +47,9 @@
             leftPanel.Dock = DockStyle.Left;
             leftPanel.ForeColor = Color.White;
             leftPanel.Location = new Point(0, 0);
+            leftPanel.Margin = new Padding(3, 4, 3, 4);
             leftPanel.Name = "leftPanel";
-            leftPanel.Size = new Size(200, 450);
+            leftPanel.Size = new Size(229, 600);
             leftPanel.TabIndex = 0;
             // 
             // panel1
@@ -56,17 +57,18 @@
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(200, 50);
+            panel1.Size = new Size(229, 67);
             panel1.TabIndex = 0;
             // 
             // label1
             // 
             label1.Dock = DockStyle.Right;
             label1.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(56, 0);
+            label1.Location = new Point(64, 0);
             label1.Name = "label1";
-            label1.Size = new Size(144, 50);
+            label1.Size = new Size(165, 67);
             label1.TabIndex = 1;
             label1.Text = "Welcome";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -75,41 +77,46 @@
             // 
             rightPanel.Controls.Add(panel2);
             rightPanel.Dock = DockStyle.Fill;
-            rightPanel.Location = new Point(200, 0);
+            rightPanel.Location = new Point(229, 0);
+            rightPanel.Margin = new Padding(3, 4, 3, 4);
             rightPanel.Name = "rightPanel";
-            rightPanel.Size = new Size(600, 450);
+            rightPanel.Size = new Size(685, 600);
             rightPanel.TabIndex = 1;
             // 
             // panel2
             // 
-            panel2.BackColor = SystemColors.HotTrack;
+            panel2.BackColor = SystemColors.Control;
             panel2.Controls.Add(label2);
             panel2.Dock = DockStyle.Top;
             panel2.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            panel2.ForeColor = Color.White;
+            panel2.ForeColor = SystemColors.HotTrack;
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(600, 50);
+            panel2.Size = new Size(685, 67);
             panel2.TabIndex = 0;
             // 
             // label2
             // 
+            label2.BackColor = SystemColors.Control;
             label2.Dock = DockStyle.Left;
+            label2.ForeColor = SystemColors.HotTrack;
             label2.Location = new Point(0, 0);
             label2.Name = "label2";
-            label2.Size = new Size(297, 50);
+            label2.Size = new Size(339, 67);
             label2.TabIndex = 1;
             label2.Text = "Saad Hassan";
             label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Base
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             ControlBox = false;
             Controls.Add(rightPanel);
             Controls.Add(leftPanel);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Base";
             leftPanel.ResumeLayout(false);
             panel1.ResumeLayout(false);

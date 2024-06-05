@@ -49,7 +49,7 @@
             leftPanel.Location = new Point(0, 0);
             leftPanel.Margin = new Padding(3, 4, 3, 4);
             leftPanel.Name = "leftPanel";
-            leftPanel.Size = new Size(229, 600);
+            leftPanel.Size = new Size(262, 600);
             leftPanel.TabIndex = 0;
             // 
             // panel1
@@ -59,14 +59,14 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(229, 67);
+            panel1.Size = new Size(262, 67);
             panel1.TabIndex = 0;
             // 
             // label1
             // 
             label1.Dock = DockStyle.Right;
             label1.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(64, 0);
+            label1.Location = new Point(97, 0);
             label1.Name = "label1";
             label1.Size = new Size(165, 67);
             label1.TabIndex = 1;
@@ -77,10 +77,10 @@
             // 
             rightPanel.Controls.Add(panel2);
             rightPanel.Dock = DockStyle.Fill;
-            rightPanel.Location = new Point(229, 0);
+            rightPanel.Location = new Point(262, 0);
             rightPanel.Margin = new Padding(3, 4, 3, 4);
             rightPanel.Name = "rightPanel";
-            rightPanel.Size = new Size(685, 600);
+            rightPanel.Size = new Size(652, 600);
             rightPanel.TabIndex = 1;
             // 
             // panel2
@@ -93,7 +93,7 @@
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(685, 67);
+            panel2.Size = new Size(652, 67);
             panel2.TabIndex = 0;
             // 
             // label2

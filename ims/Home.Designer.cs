@@ -43,20 +43,16 @@
             // leftPanel
             // 
             leftPanel.Margin = new Padding(3, 5, 3, 5);
-            leftPanel.Size = new Size(262, 600);
             // 
             // rightPanel
             // 
             rightPanel.Controls.Add(tableLayoutPanel1);
-            rightPanel.Location = new Point(262, 0);
             rightPanel.Margin = new Padding(3, 5, 3, 5);
-            rightPanel.Size = new Size(652, 600);
             rightPanel.Controls.SetChildIndex(tableLayoutPanel1, 0);
             // 
             // panel1
             // 
             panel1.Margin = new Padding(3, 5, 3, 5);
-            panel1.Size = new Size(262, 89);
             // 
             // tableLayoutPanel1
             // 
@@ -72,7 +68,7 @@
             tableLayoutPanel1.Controls.Add(button5, 0, 1);
             tableLayoutPanel1.Controls.Add(categoryButton, 1, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 89);
+            tableLayoutPanel1.Location = new Point(0, 67);
             tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 5;
@@ -81,7 +77,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.Size = new Size(652, 511);
+            tableLayoutPanel1.Size = new Size(652, 533);
             tableLayoutPanel1.TabIndex = 1;
             // 
             // button4
@@ -95,7 +91,7 @@
             button4.Location = new Point(492, 4);
             button4.Margin = new Padding(3, 4, 3, 4);
             button4.Name = "button4";
-            button4.Size = new Size(157, 94);
+            button4.Size = new Size(157, 98);
             button4.TabIndex = 3;
             button4.Text = "Invoice";
             button4.UseVisualStyleBackColor = false;
@@ -111,7 +107,7 @@
             button3.Location = new Point(329, 4);
             button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Size = new Size(157, 94);
+            button3.Size = new Size(157, 98);
             button3.TabIndex = 2;
             button3.Text = "Stock";
             button3.UseVisualStyleBackColor = false;
@@ -127,7 +123,7 @@
             productButton.Location = new Point(166, 4);
             productButton.Margin = new Padding(3, 4, 3, 4);
             productButton.Name = "productButton";
-            productButton.Size = new Size(157, 94);
+            productButton.Size = new Size(157, 98);
             productButton.TabIndex = 1;
             productButton.Text = "Product";
             productButton.UseVisualStyleBackColor = false;
@@ -144,7 +140,7 @@
             userButton.Location = new Point(3, 4);
             userButton.Margin = new Padding(3, 4, 3, 4);
             userButton.Name = "userButton";
-            userButton.Size = new Size(157, 94);
+            userButton.Size = new Size(157, 98);
             userButton.TabIndex = 0;
             userButton.Text = "User";
             userButton.UseVisualStyleBackColor = false;
@@ -158,10 +154,10 @@
             button5.FlatAppearance.BorderSize = 4;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.Location = new Point(3, 106);
+            button5.Location = new Point(3, 110);
             button5.Margin = new Padding(3, 4, 3, 4);
             button5.Name = "button5";
-            button5.Size = new Size(157, 94);
+            button5.Size = new Size(157, 98);
             button5.TabIndex = 4;
             button5.Text = "Sales";
             button5.UseVisualStyleBackColor = false;
@@ -174,10 +170,10 @@
             categoryButton.FlatAppearance.BorderSize = 4;
             categoryButton.FlatStyle = FlatStyle.Flat;
             categoryButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            categoryButton.Location = new Point(166, 106);
+            categoryButton.Location = new Point(166, 110);
             categoryButton.Margin = new Padding(3, 4, 3, 4);
             categoryButton.Name = "categoryButton";
-            categoryButton.Size = new Size(157, 94);
+            categoryButton.Size = new Size(157, 98);
             categoryButton.TabIndex = 5;
             categoryButton.Text = "Category";
             categoryButton.UseVisualStyleBackColor = false;

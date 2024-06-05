@@ -43,44 +43,56 @@
             leftPanel.Controls.Add(label3);
             leftPanel.Controls.Add(usernametext);
             leftPanel.Controls.Add(label4);
+            leftPanel.Margin = new Padding(3, 5, 3, 5);
+            leftPanel.Controls.SetChildIndex(panel1, 0);
             leftPanel.Controls.SetChildIndex(label4, 0);
             leftPanel.Controls.SetChildIndex(usernametext, 0);
             leftPanel.Controls.SetChildIndex(label3, 0);
             leftPanel.Controls.SetChildIndex(passwordText, 0);
             leftPanel.Controls.SetChildIndex(loginButton, 0);
             // 
+            // rightPanel
+            // 
+            rightPanel.Margin = new Padding(3, 5, 3, 5);
+            // 
+            // panel1
+            // 
+            panel1.Margin = new Padding(3, 5, 3, 5);
+            // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 156);
+            label4.Location = new Point(14, 208);
             label4.Name = "label4";
-            label4.Size = new Size(60, 15);
+            label4.Size = new Size(75, 20);
             label4.TabIndex = 3;
             label4.Text = "Username";
             label4.Click += label4_Click;
             // 
             // usernametext
             // 
-            usernametext.Location = new Point(12, 174);
+            usernametext.Location = new Point(14, 232);
+            usernametext.Margin = new Padding(3, 4, 3, 4);
             usernametext.MaxLength = 30;
             usernametext.Name = "usernametext";
-            usernametext.Size = new Size(180, 23);
+            usernametext.Size = new Size(233, 27);
             usernametext.TabIndex = 4;
             // 
             // passwordText
             // 
-            passwordText.Location = new Point(12, 218);
+            passwordText.Location = new Point(14, 291);
+            passwordText.Margin = new Padding(3, 4, 3, 4);
             passwordText.MaxLength = 30;
             passwordText.Name = "passwordText";
-            passwordText.Size = new Size(180, 23);
+            passwordText.Size = new Size(233, 27);
             passwordText.TabIndex = 6;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 200);
+            label3.Location = new Point(14, 267);
             label3.Name = "label3";
-            label3.Size = new Size(57, 15);
+            label3.Size = new Size(70, 20);
             label3.TabIndex = 5;
             label3.Text = "Password";
             // 
@@ -88,9 +100,10 @@
             // 
             loginButton.FlatAppearance.BorderSize = 2;
             loginButton.FlatStyle = FlatStyle.Flat;
-            loginButton.Location = new Point(12, 247);
+            loginButton.Location = new Point(14, 329);
+            loginButton.Margin = new Padding(3, 4, 3, 4);
             loginButton.Name = "loginButton";
-            loginButton.Size = new Size(180, 30);
+            loginButton.Size = new Size(233, 40);
             loginButton.TabIndex = 7;
             loginButton.Text = "Login";
             loginButton.UseVisualStyleBackColor = true;
@@ -98,9 +111,10 @@
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
+            Margin = new Padding(3, 5, 3, 5);
             Name = "Login";
             Text = "Login";
             leftPanel.ResumeLayout(false);

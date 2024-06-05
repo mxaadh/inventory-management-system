@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             phoneTxt = new TextBox();
             emailTxt = new TextBox();
             label7 = new Label();
@@ -39,7 +39,6 @@
             nameTxt = new TextBox();
             label4 = new Label();
             label3 = new Label();
-            panel3 = new Panel();
             nameErrorLabel = new Label();
             usernameErrorLabel = new Label();
             passwordErrorLabel = new Label();
@@ -67,11 +66,14 @@
             backBtn.FlatAppearance.BorderSize = 0;
             backBtn.Click += backBtn_Click;
             // 
+            // actionLeftPanel
+            // 
+            actionLeftPanel.Dock = DockStyle.None;
+            // 
             // leftPanel
             // 
             leftPanel.Controls.Add(statusDD);
             leftPanel.Controls.Add(label8);
-            leftPanel.Controls.Add(panel3);
             leftPanel.Controls.Add(phoneTxt);
             leftPanel.Controls.Add(emailTxt);
             leftPanel.Controls.Add(label7);
@@ -88,13 +90,13 @@
             leftPanel.Controls.Add(emailErrorLabel);
             leftPanel.Controls.Add(phoneErrorLabel);
             leftPanel.Controls.Add(statusErrorLabel);
+            leftPanel.Controls.SetChildIndex(actionLeftPanel, 0);
             leftPanel.Controls.SetChildIndex(statusErrorLabel, 0);
             leftPanel.Controls.SetChildIndex(phoneErrorLabel, 0);
             leftPanel.Controls.SetChildIndex(emailErrorLabel, 0);
             leftPanel.Controls.SetChildIndex(passwordErrorLabel, 0);
             leftPanel.Controls.SetChildIndex(usernameErrorLabel, 0);
             leftPanel.Controls.SetChildIndex(nameErrorLabel, 0);
-            leftPanel.Controls.SetChildIndex(panel1, 0);
             leftPanel.Controls.SetChildIndex(label3, 0);
             leftPanel.Controls.SetChildIndex(label4, 0);
             leftPanel.Controls.SetChildIndex(nameTxt, 0);
@@ -105,9 +107,9 @@
             leftPanel.Controls.SetChildIndex(label7, 0);
             leftPanel.Controls.SetChildIndex(emailTxt, 0);
             leftPanel.Controls.SetChildIndex(phoneTxt, 0);
-            leftPanel.Controls.SetChildIndex(panel3, 0);
             leftPanel.Controls.SetChildIndex(label8, 0);
             leftPanel.Controls.SetChildIndex(statusDD, 0);
+            leftPanel.Controls.SetChildIndex(panel1, 0);
             // 
             // rightPanel
             // 
@@ -118,14 +120,14 @@
             // 
             phoneTxt.Location = new Point(12, 379);
             phoneTxt.Name = "phoneTxt";
-            phoneTxt.Size = new Size(211, 27);
+            phoneTxt.Size = new Size(235, 27);
             phoneTxt.TabIndex = 7;
             // 
             // emailTxt
             // 
             emailTxt.Location = new Point(12, 326);
             emailTxt.Name = "emailTxt";
-            emailTxt.Size = new Size(211, 27);
+            emailTxt.Size = new Size(235, 27);
             emailTxt.TabIndex = 8;
             // 
             // label7
@@ -141,7 +143,7 @@
             // 
             passwordTxt.Location = new Point(12, 273);
             passwordTxt.Name = "passwordTxt";
-            passwordTxt.Size = new Size(211, 27);
+            passwordTxt.Size = new Size(235, 27);
             passwordTxt.TabIndex = 9;
             // 
             // label6
@@ -157,7 +159,7 @@
             // 
             usernameTxt.Location = new Point(12, 220);
             usernameTxt.Name = "usernameTxt";
-            usernameTxt.Size = new Size(211, 27);
+            usernameTxt.Size = new Size(235, 27);
             usernameTxt.TabIndex = 10;
             // 
             // label5
@@ -173,7 +175,7 @@
             // 
             nameTxt.Location = new Point(12, 167);
             nameTxt.Name = "nameTxt";
-            nameTxt.Size = new Size(211, 27);
+            nameTxt.Size = new Size(235, 27);
             nameTxt.TabIndex = 11;
             // 
             // label4
@@ -193,14 +195,6 @@
             label3.Size = new Size(49, 20);
             label3.TabIndex = 6;
             label3.Text = "Name";
-            // 
-            // panel3
-            // 
-            panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 67);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(229, 67);
-            panel3.TabIndex = 12;
             // 
             // nameErrorLabel
             // 
@@ -269,14 +263,14 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { userIDGV, NameGV, UserNameGV, PassGV, EmailGV, PhoneGV, StatusGV });
             dataGridView1.Dock = DockStyle.Fill;
@@ -286,7 +280,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(685, 466);
+            dataGridView1.Size = new Size(652, 466);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 
@@ -355,7 +349,7 @@
             statusDD.Items.AddRange(new object[] { "Active", "In-active" });
             statusDD.Location = new Point(13, 432);
             statusDD.Name = "statusDD";
-            statusDD.Size = new Size(210, 28);
+            statusDD.Size = new Size(234, 28);
             statusDD.TabIndex = 19;
             // 
             // statusErrorLabel
@@ -399,7 +393,6 @@
         private TextBox nameTxt;
         private Label label4;
         private Label label3;
-        private Panel panel3;
         private Label nameErrorLabel;
         private Label usernameErrorLabel;
         private Label passwordErrorLabel;

@@ -39,12 +39,14 @@
             viewBtn = new Button();
             backBtn = new Button();
             actionLeftPanel = new Panel();
+            formsHeadingLabel = new Label();
             leftPanel.SuspendLayout();
             rightPanel.SuspendLayout();
             panel1.SuspendLayout();
             actionRightpanel.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             groupBox1.SuspendLayout();
+            actionLeftPanel.SuspendLayout();
             SuspendLayout();
             // 
             // leftPanel
@@ -217,11 +219,22 @@
             // 
             // actionLeftPanel
             // 
+            actionLeftPanel.Controls.Add(formsHeadingLabel);
             actionLeftPanel.Dock = DockStyle.Top;
             actionLeftPanel.Location = new Point(0, 67);
             actionLeftPanel.Name = "actionLeftPanel";
             actionLeftPanel.Size = new Size(262, 67);
             actionLeftPanel.TabIndex = 13;
+            // 
+            // formsHeadingLabel
+            // 
+            formsHeadingLabel.AutoSize = true;
+            formsHeadingLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            formsHeadingLabel.Location = new Point(12, 16);
+            formsHeadingLabel.Name = "formsHeadingLabel";
+            formsHeadingLabel.Size = new Size(151, 28);
+            formsHeadingLabel.TabIndex = 22;
+            formsHeadingLabel.Text = "Forms Heading";
             // 
             // Action
             // 
@@ -237,6 +250,8 @@
             tableLayoutPanel1.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            actionLeftPanel.ResumeLayout(false);
+            actionLeftPanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -252,5 +267,6 @@
         protected TextBox searchBox;
         private Button viewBtn;
         protected Panel actionLeftPanel;
+        protected Label formsHeadingLabel;
     }
 }

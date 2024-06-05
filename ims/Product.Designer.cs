@@ -28,10 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Product";
+            actionLeftPanel.SuspendLayout();
+            leftPanel.SuspendLayout();
+            panel1.SuspendLayout();
+            SuspendLayout();
+            // 
+            // backBtn
+            // 
+            backBtn.FlatAppearance.BorderSize = 0;
+            backBtn.Click += backBtn_Click;
+            // 
+            // searchBox
+            // 
+            searchBox.Size = new Size(81, 27);
+            // 
+            // formsHeadingLabel
+            // 
+            formsHeadingLabel.Size = new Size(136, 28);
+            formsHeadingLabel.Text = "Product Form";
+            // 
+            // leftPanel
+            // 
+            leftPanel.Size = new Size(262, 450);
+            // 
+            // rightPanel
+            // 
+            rightPanel.Size = new Size(538, 450);
+            // 
+            // Product
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Name = "Product";
+            Text = "Product";
+            actionLeftPanel.ResumeLayout(false);
+            actionLeftPanel.PerformLayout();
+            leftPanel.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion

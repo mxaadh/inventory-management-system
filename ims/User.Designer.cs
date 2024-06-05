@@ -55,6 +55,7 @@
             label8 = new Label();
             statusDD = new ComboBox();
             statusErrorLabel = new Label();
+            actionLeftPanel.SuspendLayout();
             leftPanel.SuspendLayout();
             rightPanel.SuspendLayout();
             panel1.SuspendLayout();
@@ -69,6 +70,11 @@
             // actionLeftPanel
             // 
             actionLeftPanel.Dock = DockStyle.None;
+            // 
+            // formsHeadingLabel
+            // 
+            formsHeadingLabel.Size = new Size(106, 28);
+            formsHeadingLabel.Text = "User Form";
             // 
             // leftPanel
             // 
@@ -118,14 +124,14 @@
             // 
             // phoneTxt
             // 
-            phoneTxt.Location = new Point(12, 379);
+            phoneTxt.Location = new Point(11, 382);
             phoneTxt.Name = "phoneTxt";
             phoneTxt.Size = new Size(235, 27);
             phoneTxt.TabIndex = 7;
             // 
             // emailTxt
             // 
-            emailTxt.Location = new Point(12, 326);
+            emailTxt.Location = new Point(11, 329);
             emailTxt.Name = "emailTxt";
             emailTxt.Size = new Size(235, 27);
             emailTxt.TabIndex = 8;
@@ -133,7 +139,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(12, 356);
+            label7.Location = new Point(11, 359);
             label7.Name = "label7";
             label7.Size = new Size(50, 20);
             label7.TabIndex = 2;
@@ -141,7 +147,7 @@
             // 
             // passwordTxt
             // 
-            passwordTxt.Location = new Point(12, 273);
+            passwordTxt.Location = new Point(11, 276);
             passwordTxt.Name = "passwordTxt";
             passwordTxt.Size = new Size(235, 27);
             passwordTxt.TabIndex = 9;
@@ -149,7 +155,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(13, 303);
+            label6.Location = new Point(12, 306);
             label6.Name = "label6";
             label6.Size = new Size(46, 20);
             label6.TabIndex = 3;
@@ -157,7 +163,7 @@
             // 
             // usernameTxt
             // 
-            usernameTxt.Location = new Point(12, 220);
+            usernameTxt.Location = new Point(11, 223);
             usernameTxt.Name = "usernameTxt";
             usernameTxt.Size = new Size(235, 27);
             usernameTxt.TabIndex = 10;
@@ -165,7 +171,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(12, 250);
+            label5.Location = new Point(11, 253);
             label5.Name = "label5";
             label5.Size = new Size(70, 20);
             label5.TabIndex = 4;
@@ -173,7 +179,7 @@
             // 
             // nameTxt
             // 
-            nameTxt.Location = new Point(12, 167);
+            nameTxt.Location = new Point(11, 170);
             nameTxt.Name = "nameTxt";
             nameTxt.Size = new Size(235, 27);
             nameTxt.TabIndex = 11;
@@ -181,7 +187,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 197);
+            label4.Location = new Point(11, 200);
             label4.Name = "label4";
             label4.Size = new Size(75, 20);
             label4.TabIndex = 5;
@@ -190,7 +196,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(13, 144);
+            label3.Location = new Point(12, 147);
             label3.Name = "label3";
             label3.Size = new Size(49, 20);
             label3.TabIndex = 6;
@@ -201,7 +207,7 @@
             nameErrorLabel.AutoSize = true;
             nameErrorLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             nameErrorLabel.ForeColor = Color.LightCoral;
-            nameErrorLabel.Location = new Point(54, 137);
+            nameErrorLabel.Location = new Point(53, 140);
             nameErrorLabel.Name = "nameErrorLabel";
             nameErrorLabel.Size = new Size(29, 38);
             nameErrorLabel.TabIndex = 13;
@@ -213,7 +219,7 @@
             usernameErrorLabel.AutoSize = true;
             usernameErrorLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             usernameErrorLabel.ForeColor = Color.LightCoral;
-            usernameErrorLabel.Location = new Point(80, 189);
+            usernameErrorLabel.Location = new Point(79, 192);
             usernameErrorLabel.Name = "usernameErrorLabel";
             usernameErrorLabel.Size = new Size(29, 38);
             usernameErrorLabel.TabIndex = 14;
@@ -225,7 +231,7 @@
             passwordErrorLabel.AutoSize = true;
             passwordErrorLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             passwordErrorLabel.ForeColor = Color.LightCoral;
-            passwordErrorLabel.Location = new Point(75, 243);
+            passwordErrorLabel.Location = new Point(74, 246);
             passwordErrorLabel.Name = "passwordErrorLabel";
             passwordErrorLabel.Size = new Size(29, 38);
             passwordErrorLabel.TabIndex = 15;
@@ -237,7 +243,7 @@
             emailErrorLabel.AutoSize = true;
             emailErrorLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             emailErrorLabel.ForeColor = Color.LightCoral;
-            emailErrorLabel.Location = new Point(52, 296);
+            emailErrorLabel.Location = new Point(51, 299);
             emailErrorLabel.Name = "emailErrorLabel";
             emailErrorLabel.Size = new Size(29, 38);
             emailErrorLabel.TabIndex = 16;
@@ -249,7 +255,7 @@
             phoneErrorLabel.AutoSize = true;
             phoneErrorLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             phoneErrorLabel.ForeColor = Color.LightCoral;
-            phoneErrorLabel.Location = new Point(54, 350);
+            phoneErrorLabel.Location = new Point(53, 353);
             phoneErrorLabel.Name = "phoneErrorLabel";
             phoneErrorLabel.Size = new Size(29, 38);
             phoneErrorLabel.TabIndex = 17;
@@ -337,7 +343,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(12, 409);
+            label8.Location = new Point(11, 412);
             label8.Name = "label8";
             label8.Size = new Size(49, 20);
             label8.TabIndex = 18;
@@ -347,7 +353,7 @@
             // 
             statusDD.FormattingEnabled = true;
             statusDD.Items.AddRange(new object[] { "Active", "In-active" });
-            statusDD.Location = new Point(13, 432);
+            statusDD.Location = new Point(12, 435);
             statusDD.Name = "statusDD";
             statusDD.Size = new Size(234, 28);
             statusDD.TabIndex = 19;
@@ -357,7 +363,7 @@
             statusErrorLabel.AutoSize = true;
             statusErrorLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             statusErrorLabel.ForeColor = Color.LightCoral;
-            statusErrorLabel.Location = new Point(53, 403);
+            statusErrorLabel.Location = new Point(52, 406);
             statusErrorLabel.Name = "statusErrorLabel";
             statusErrorLabel.Size = new Size(29, 38);
             statusErrorLabel.TabIndex = 20;
@@ -373,6 +379,8 @@
             Name = "User";
             Text = "User";
             Load += User_Load;
+            actionLeftPanel.ResumeLayout(false);
+            actionLeftPanel.PerformLayout();
             leftPanel.ResumeLayout(false);
             leftPanel.PerformLayout();
             rightPanel.ResumeLayout(false);

@@ -27,15 +27,15 @@ namespace ims
         private void productButton_Click(object sender, EventArgs e)
         {
             Home home = new Home();
-            User user = new User();
-            Main.showWindow(user, home, MDI.ActiveForm);
+            Product product = new Product();
+            Main.showWindow(product, home, MDI.ActiveForm);
         }
 
         private void categoryButton_Click(object sender, EventArgs e)
         {
             Home home = new Home();
-            User user = new User();
-            Main.showWindow(user, home, MDI.ActiveForm);
+            Category category = new Category();
+            Main.showWindow(category, home, MDI.ActiveForm);
         }
     }
 }

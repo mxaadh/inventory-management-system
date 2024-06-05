@@ -65,11 +65,8 @@ namespace ims
                 if (edit == 0)
                 {
                     // Insert Data
-                    // using (Insertion insertion = new Insertion())
-                    // {
                     Insertion insertion = new Insertion();
                     insertion.InsertUser(nameTxt.Text, usernameTxt.Text, passwordTxt.Text, emailTxt.Text, phoneTxt.Text, status);
-                    // }
                     retrieval.showUser(dataGridView1, userIDGV, NameGV, UserNameGV, PassGV, EmailGV, PhoneGV, StatusGV);
                     Main.disable_reset(leftPanel);
                 }
@@ -111,7 +108,6 @@ namespace ims
         {
             if (searchBox.Text != string.Empty)
             {
-                MessageBox.Show(searchBox.Text);
                 retrieval.showUser(dataGridView1, userIDGV, NameGV, UserNameGV, PassGV, EmailGV, PhoneGV, StatusGV, searchBox.Text);
             }
             else

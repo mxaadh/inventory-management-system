@@ -55,5 +55,41 @@ namespace ims.CRUD
 
             }
         }
+
+        public void showCategory(
+            DataGridView gv,
+            DataGridViewColumn catIDGV,
+            DataGridViewColumn nameGV,
+            DataGridViewColumn statusGV,
+            string? q = null
+        ) {
+            try
+            {
+                SqlCommand cmd;
+                if (q == null)
+                {
+                    cmd = new SqlCommand("st_getCategoiesData", Main.con);
+                }
+                else
+                {
+                    cmd = new SqlCommand("st_searchCategoiesData", Main.con);
+                    cmd.Parameters.AddWithValue("@_q", q);
+                }
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                catIDGV.DataPropertyName = dt.Columns["ID"].ToString();
+                nameGV.DataPropertyName = dt.Columns["Name"].ToString();
+                statusGV.DataPropertyName = dt.Columns["Status"].ToString();
+
+                gv.DataSource = dt;
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
 }

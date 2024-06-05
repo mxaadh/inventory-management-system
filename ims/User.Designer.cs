@@ -151,6 +151,7 @@
             passwordTxt.Name = "passwordTxt";
             passwordTxt.Size = new Size(235, 27);
             passwordTxt.TabIndex = 9;
+            passwordTxt.UseSystemPasswordChar = true;
             // 
             // label6
             // 
@@ -351,6 +352,7 @@
             // 
             // statusDD
             // 
+            statusDD.DropDownStyle = ComboBoxStyle.DropDownList;
             statusDD.FormattingEnabled = true;
             statusDD.Items.AddRange(new object[] { "Active", "In-active" });
             statusDD.Location = new Point(12, 435);

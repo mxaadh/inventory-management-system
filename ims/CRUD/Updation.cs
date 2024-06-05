@@ -5,6 +5,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Xml.Linq;
 
 namespace ims.CRUD
 {
@@ -13,7 +16,7 @@ namespace ims.CRUD
         public Updation() => Main.con.Open();
         // ~Updation() => Main.con.Close();
 
-        public bool UpdateUser(int id, string name, string username, string password, string email, string phone, Int16 status)
+        public void UpdateUser(int id, string name, string username, string password, string email, string phone, Int16 status)
         {
             try
             {
@@ -29,14 +32,30 @@ namespace ims.CRUD
                 cmd.ExecuteNonQuery();
                 Main.con.Close();
                 Main.ShowMSG("User Updated Successfully", "Success", "Success");
-                return true;
             }
             catch (Exception ex)
             {
                 Main.ShowMSG("Error While Updating User. " + ex.Message, "Error", "Error");
             }
+        }
 
-            return false; 
+        public void UpdateCategory(int id, string name, Int16 status)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("st_updateCategories", Main.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_cat_name", name);
+                cmd.Parameters.AddWithValue("@_cat_status", status);
+                cmd.Parameters.AddWithValue("@_id", id);
+                cmd.ExecuteNonQuery();
+                Main.con.Close();
+                Main.ShowMSG("Category Updated Successfully", "Success", "Success");
+            }
+            catch (Exception ex)
+            {
+                Main.ShowMSG("Error While Updating Category. " + ex.Message, "Error", "Error");
+            }
         }
     }
 }

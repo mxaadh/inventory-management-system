@@ -55,6 +55,8 @@
             label8 = new Label();
             statusDD = new ComboBox();
             statusErrorLabel = new Label();
+            label9 = new Label();
+            actionLeftPanel.SuspendLayout();
             leftPanel.SuspendLayout();
             rightPanel.SuspendLayout();
             panel1.SuspendLayout();
@@ -68,6 +70,7 @@
             // 
             // actionLeftPanel
             // 
+            actionLeftPanel.Controls.Add(label9);
             actionLeftPanel.Dock = DockStyle.None;
             // 
             // leftPanel
@@ -145,6 +148,7 @@
             passwordTxt.Name = "passwordTxt";
             passwordTxt.Size = new Size(235, 27);
             passwordTxt.TabIndex = 9;
+            passwordTxt.UseSystemPasswordChar = true;
             // 
             // label6
             // 
@@ -345,6 +349,7 @@
             // 
             // statusDD
             // 
+            statusDD.DropDownStyle = ComboBoxStyle.DropDownList;
             statusDD.FormattingEnabled = true;
             statusDD.Items.AddRange(new object[] { "Active", "In-active" });
             statusDD.Location = new Point(13, 432);
@@ -364,6 +369,16 @@
             statusErrorLabel.Text = "*";
             statusErrorLabel.Visible = false;
             // 
+            // label9
+            // 
+            label9.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.Location = new Point(13, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(234, 67);
+            label9.TabIndex = 2;
+            label9.Text = "User";
+            label9.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // User
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -371,8 +386,8 @@
             ClientSize = new Size(914, 600);
             Margin = new Padding(3, 7, 3, 7);
             Name = "User";
-            Text = "User";
             Load += User_Load;
+            actionLeftPanel.ResumeLayout(false);
             leftPanel.ResumeLayout(false);
             leftPanel.PerformLayout();
             rightPanel.ResumeLayout(false);
@@ -409,5 +424,6 @@
         private DataGridViewTextBoxColumn PhoneGV;
         private DataGridViewTextBoxColumn StatusGV;
         private Label statusErrorLabel;
+        private Label label9;
     }
 }

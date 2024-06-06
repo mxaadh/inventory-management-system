@@ -50,10 +50,8 @@ namespace ims.CRUD
                 
 
                 gv.DataSource = dt;
-            } catch(Exception)
-            {
-
             }
+            catch (Exception) { throw; }
         }
 
         public void showCategory(
@@ -86,10 +84,31 @@ namespace ims.CRUD
 
                 gv.DataSource = dt;
             }
-            catch (Exception)
-            {
+            catch (Exception) { throw; }
+        }
 
-            }
+        public void getDropDownList(string procedure, ComboBox cb)
+        {
+            try
+            {
+                // cb.Items.Clear();
+                cb.DataSource = null;
+
+                SqlCommand cmd = new SqlCommand(procedure, Main.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                DataRow dr = dt.NewRow();
+                dr.ItemArray = new object[] { 0, "Select ..." };
+                dt.Rows.InsertAt(dr, 0);
+
+                cb.DisplayMember = "Name";
+                cb.ValueMember = "ID";
+                cb.DataSource = dt;
+            } catch (Exception) { throw; }
         }
     }
 }

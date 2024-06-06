@@ -53,5 +53,27 @@ namespace ims.CRUD
                 Main.ShowMSG("Error While Inserting Category. " + ex.Message, "Error", "Error");
             }
         }
+
+        public void InsertProduct(int catID, string name, string barcode, DateTime expiryDate, float price, short status)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("st_insertProducts", Main.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_pro_cat_id", catID);
+                cmd.Parameters.AddWithValue("@_pro_name", name);
+                cmd.Parameters.AddWithValue("@_pro_barcode", barcode);
+                cmd.Parameters.AddWithValue("@_pro_expiry_date", expiryDate);
+                cmd.Parameters.AddWithValue("@_pro_price", price);
+                cmd.Parameters.AddWithValue("@_pro_status", status);
+                cmd.ExecuteNonQuery();
+                Main.con.Close();
+                Main.ShowMSG("Product Inserted Successfully", "Success", "Success");
+            }
+            catch (Exception ex)
+            {
+                Main.ShowMSG("Error While Inserting Product. " + ex.Message, "Error", "Error");
+            }
+        }
     }
 }

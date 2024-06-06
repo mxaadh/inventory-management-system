@@ -36,19 +36,20 @@
             barcodeErrorLabel = new Label();
             label6 = new Label();
             expiryDateErrorLabel = new Label();
-            priceTxt = new TextBox();
             label8 = new Label();
             priceErrorLabel = new Label();
             categoryDD = new ComboBox();
             label10 = new Label();
             categoryErrorLabel = new Label();
-            comboBox1 = new ComboBox();
+            statusDD = new ComboBox();
             label11 = new Label();
-            label12 = new Label();
+            statusErrorLabel = new Label();
             expiryDateTxt = new DateTimePicker();
+            priceTxt = new NumericUpDown();
             actionLeftPanel.SuspendLayout();
             leftPanel.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)priceTxt).BeginInit();
             SuspendLayout();
             // 
             // backBtn
@@ -63,19 +64,19 @@
             // 
             // leftPanel
             // 
+            leftPanel.Controls.Add(priceTxt);
             leftPanel.Controls.Add(expiryDateTxt);
-            leftPanel.Controls.Add(comboBox1);
+            leftPanel.Controls.Add(statusDD);
             leftPanel.Controls.Add(label11);
             leftPanel.Controls.Add(categoryDD);
             leftPanel.Controls.Add(label10);
-            leftPanel.Controls.Add(priceTxt);
             leftPanel.Controls.Add(label8);
             leftPanel.Controls.Add(label6);
             leftPanel.Controls.Add(barcodeTxt);
             leftPanel.Controls.Add(label4);
             leftPanel.Controls.Add(nameTxt);
             leftPanel.Controls.Add(label3);
-            leftPanel.Controls.Add(label12);
+            leftPanel.Controls.Add(statusErrorLabel);
             leftPanel.Controls.Add(categoryErrorLabel);
             leftPanel.Controls.Add(priceErrorLabel);
             leftPanel.Controls.Add(expiryDateErrorLabel);
@@ -86,7 +87,7 @@
             leftPanel.Controls.SetChildIndex(expiryDateErrorLabel, 0);
             leftPanel.Controls.SetChildIndex(priceErrorLabel, 0);
             leftPanel.Controls.SetChildIndex(categoryErrorLabel, 0);
-            leftPanel.Controls.SetChildIndex(label12, 0);
+            leftPanel.Controls.SetChildIndex(statusErrorLabel, 0);
             leftPanel.Controls.SetChildIndex(label3, 0);
             leftPanel.Controls.SetChildIndex(nameTxt, 0);
             leftPanel.Controls.SetChildIndex(panel1, 0);
@@ -95,12 +96,12 @@
             leftPanel.Controls.SetChildIndex(barcodeTxt, 0);
             leftPanel.Controls.SetChildIndex(label6, 0);
             leftPanel.Controls.SetChildIndex(label8, 0);
-            leftPanel.Controls.SetChildIndex(priceTxt, 0);
             leftPanel.Controls.SetChildIndex(label10, 0);
             leftPanel.Controls.SetChildIndex(categoryDD, 0);
             leftPanel.Controls.SetChildIndex(label11, 0);
-            leftPanel.Controls.SetChildIndex(comboBox1, 0);
+            leftPanel.Controls.SetChildIndex(statusDD, 0);
             leftPanel.Controls.SetChildIndex(expiryDateTxt, 0);
+            leftPanel.Controls.SetChildIndex(priceTxt, 0);
             // 
             // nameTxt
             // 
@@ -179,13 +180,6 @@
             expiryDateErrorLabel.Text = "*";
             expiryDateErrorLabel.Visible = false;
             // 
-            // priceTxt
-            // 
-            priceTxt.Location = new Point(12, 327);
-            priceTxt.Name = "priceTxt";
-            priceTxt.Size = new Size(236, 27);
-            priceTxt.TabIndex = 24;
-            // 
             // label8
             // 
             label8.AutoSize = true;
@@ -237,15 +231,15 @@
             categoryErrorLabel.Text = "*";
             categoryErrorLabel.Visible = false;
             // 
-            // comboBox1
+            // statusDD
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Active", "In-active" });
-            comboBox1.Location = new Point(14, 430);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(234, 28);
-            comboBox1.TabIndex = 30;
+            statusDD.DropDownStyle = ComboBoxStyle.DropDownList;
+            statusDD.FormattingEnabled = true;
+            statusDD.Items.AddRange(new object[] { "Active", "In-active" });
+            statusDD.Location = new Point(14, 430);
+            statusDD.Name = "statusDD";
+            statusDD.Size = new Size(234, 28);
+            statusDD.TabIndex = 30;
             // 
             // label11
             // 
@@ -256,24 +250,34 @@
             label11.TabIndex = 29;
             label11.Text = "Status";
             // 
-            // label12
+            // statusErrorLabel
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.ForeColor = Color.LightCoral;
-            label12.Location = new Point(54, 401);
-            label12.Name = "label12";
-            label12.Size = new Size(29, 38);
-            label12.TabIndex = 31;
-            label12.Text = "*";
-            label12.Visible = false;
+            statusErrorLabel.AutoSize = true;
+            statusErrorLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            statusErrorLabel.ForeColor = Color.LightCoral;
+            statusErrorLabel.Location = new Point(54, 401);
+            statusErrorLabel.Name = "statusErrorLabel";
+            statusErrorLabel.Size = new Size(29, 38);
+            statusErrorLabel.TabIndex = 31;
+            statusErrorLabel.Text = "*";
+            statusErrorLabel.Visible = false;
             // 
             // expiryDateTxt
             // 
+            expiryDateTxt.CustomFormat = "dd-MMM-yyyy";
+            expiryDateTxt.Format = DateTimePickerFormat.Custom;
             expiryDateTxt.Location = new Point(12, 274);
+            expiryDateTxt.MinDate = new DateTime(2024, 6, 6, 0, 0, 0, 0);
             expiryDateTxt.Name = "expiryDateTxt";
             expiryDateTxt.Size = new Size(236, 27);
             expiryDateTxt.TabIndex = 32;
+            // 
+            // priceTxt
+            // 
+            priceTxt.Location = new Point(12, 327);
+            priceTxt.Name = "priceTxt";
+            priceTxt.Size = new Size(236, 27);
+            priceTxt.TabIndex = 33;
             // 
             // Product
             // 
@@ -288,6 +292,7 @@
             leftPanel.ResumeLayout(false);
             leftPanel.PerformLayout();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)priceTxt).EndInit();
             ResumeLayout(false);
         }
 
@@ -296,7 +301,6 @@
         private TextBox nameTxt;
         private Label label3;
         private Label nameErrorLabel;
-        private TextBox priceTxt;
         private Label label8;
         private Label priceErrorLabel;
         private TextBox textBox2;
@@ -305,12 +309,13 @@
         private TextBox barcodeTxt;
         private Label label4;
         private Label barcodeErrorLabel;
-        private ComboBox comboBox1;
+        private ComboBox statusDD;
         private Label label11;
         private ComboBox categoryDD;
         private Label label10;
-        private Label label12;
+        private Label statusErrorLabel;
         private Label categoryErrorLabel;
         private DateTimePicker expiryDateTxt;
+        private NumericUpDown priceTxt;
     }
 }

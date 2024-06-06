@@ -79,7 +79,7 @@ namespace ims
                     // Insert Data
                     Insertion insertion = new Insertion();
                     insertion.InsertProduct(Convert.ToInt32(categoryDD.SelectedValue), nameTxt.Text, barcodeTxt.Text, expiryDateTxt.Value, Convert.ToSingle(priceTxt.Text), status);
-                    // retrieval.showUser(dataGridView1, userIDGV, NameGV, UserNameGV, PassGV, EmailGV, PhoneGV, StatusGV);
+                    retrieval.showProduct(dataGridView1, proIDGV, NameGV, BarcodeGV, ExpiryDateGV, PriceGV, CategoryGV, StatusGV);
                     Main.disable_reset(leftPanel);
                 }
                 else if (edit == 1)
@@ -104,7 +104,7 @@ namespace ims
 
         public override void viewBtn_Click(object sender, EventArgs e)
         {
-
+            retrieval.showProduct(dataGridView1, proIDGV, NameGV, BarcodeGV, ExpiryDateGV, PriceGV, CategoryGV, StatusGV);
         }
 
         public override void searchBox_TextChanged(object sender, EventArgs e)

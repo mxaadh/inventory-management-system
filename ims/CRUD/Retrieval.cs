@@ -31,7 +31,6 @@ namespace ims.CRUD
                 }
                 else
                 {
-                    MessageBox.Show("asdf >> " + q);
                     cmd = new SqlCommand("st_searchUsersData", Main.con);
                     cmd.Parameters.AddWithValue("@_q", q);
                 }
@@ -108,6 +107,37 @@ namespace ims.CRUD
                 cb.DisplayMember = "Name";
                 cb.ValueMember = "ID";
                 cb.DataSource = dt;
+            } catch (Exception) { throw; }
+        }
+
+        public void showProduct(
+            DataGridView gv,
+            DataGridViewColumn proIDGV,
+            DataGridViewColumn nameGV,
+            DataGridViewColumn barcodeGV,
+            DataGridViewColumn expiryDateGV,
+            DataGridViewColumn priceGV,
+            DataGridViewColumn categoryGV,
+            DataGridViewColumn statusGV,
+            string? q = null
+        ) {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("st_getProductsData", Main.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                proIDGV.DataPropertyName = dt.Columns["ID"].ToString();
+                nameGV.DataPropertyName = dt.Columns["Name"].ToString();
+                barcodeGV.DataPropertyName = dt.Columns["Barcode"].ToString();
+                expiryDateGV.DataPropertyName = dt.Columns["Expiry Date"].ToString();
+                priceGV.DataPropertyName = dt.Columns["Price"].ToString();
+                categoryGV.DataPropertyName = dt.Columns["Category"].ToString();
+                statusGV.DataPropertyName = dt.Columns["Status"].ToString();
+
+                gv.DataSource = dt;
             } catch (Exception) { throw; }
         }
     }

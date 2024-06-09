@@ -113,6 +113,7 @@ namespace ims.CRUD
         public void showProduct(
             DataGridView gv,
             DataGridViewColumn proIDGV,
+            DataGridViewColumn catIDGV,
             DataGridViewColumn nameGV,
             DataGridViewColumn barcodeGV,
             DataGridViewColumn expiryDateGV,
@@ -130,6 +131,7 @@ namespace ims.CRUD
                 da.Fill(dt);
 
                 proIDGV.DataPropertyName = dt.Columns["ID"].ToString();
+                catIDGV.DataPropertyName = dt.Columns["Category ID"].ToString();
                 nameGV.DataPropertyName = dt.Columns["Name"].ToString();
                 barcodeGV.DataPropertyName = dt.Columns["Barcode"].ToString();
                 expiryDateGV.DataPropertyName = dt.Columns["Expiry Date"].ToString();

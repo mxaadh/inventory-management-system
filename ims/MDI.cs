@@ -35,12 +35,5 @@ namespace ims
             Login login = new Login();
             Main.showWindow(settings, login, MDI.ActiveForm);
         }
-
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MDI.logoutToolStripMenuItem.Enabled = false;
-            Login login = new Login();
-            Main.showWindow(login, this);
-        }
     }
 }

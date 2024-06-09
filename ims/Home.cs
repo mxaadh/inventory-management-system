@@ -21,7 +21,6 @@ namespace ims
         private void Home_Load(object sender, EventArgs e)
         {
             auth_usr_name.Text = Retrieval.usr_name;
-            MDI.logoutToolStripMenuItem.Enabled = true;
         }
 
         private void userButton_Click(object sender, EventArgs e)

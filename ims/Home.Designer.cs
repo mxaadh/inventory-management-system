@@ -48,6 +48,7 @@
             // 
             rightPanel.Controls.Add(tableLayoutPanel1);
             rightPanel.Margin = new Padding(3, 5, 3, 5);
+            rightPanel.Size = new Size(571, 450);
             rightPanel.Controls.SetChildIndex(tableLayoutPanel1, 0);
             // 
             // panel1
@@ -68,8 +69,7 @@
             tableLayoutPanel1.Controls.Add(button5, 0, 1);
             tableLayoutPanel1.Controls.Add(categoryButton, 1, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 67);
-            tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanel1.Location = new Point(0, 50);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 5;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
@@ -77,7 +77,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.Size = new Size(652, 533);
+            tableLayoutPanel1.Size = new Size(571, 400);
             tableLayoutPanel1.TabIndex = 1;
             // 
             // button4
@@ -88,12 +88,13 @@
             button4.FlatAppearance.BorderSize = 4;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.Location = new Point(492, 4);
-            button4.Margin = new Padding(3, 4, 3, 4);
+            button4.Image = Properties.Resources.invoice;
+            button4.Location = new Point(429, 3);
             button4.Name = "button4";
-            button4.Size = new Size(157, 98);
+            button4.Size = new Size(139, 74);
             button4.TabIndex = 3;
             button4.Text = "Invoice";
+            button4.TextImageRelation = TextImageRelation.TextBeforeImage;
             button4.UseVisualStyleBackColor = false;
             // 
             // button3
@@ -104,12 +105,13 @@
             button3.FlatAppearance.BorderSize = 4;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.Location = new Point(329, 4);
-            button3.Margin = new Padding(3, 4, 3, 4);
+            button3.Image = Properties.Resources.stock;
+            button3.Location = new Point(287, 3);
             button3.Name = "button3";
-            button3.Size = new Size(157, 98);
+            button3.Size = new Size(136, 74);
             button3.TabIndex = 2;
             button3.Text = "Stock";
+            button3.TextImageRelation = TextImageRelation.TextBeforeImage;
             button3.UseVisualStyleBackColor = false;
             // 
             // productButton
@@ -120,12 +122,13 @@
             productButton.FlatAppearance.BorderSize = 4;
             productButton.FlatStyle = FlatStyle.Flat;
             productButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            productButton.Location = new Point(166, 4);
-            productButton.Margin = new Padding(3, 4, 3, 4);
+            productButton.Image = Properties.Resources.prodcuct;
+            productButton.Location = new Point(145, 3);
             productButton.Name = "productButton";
-            productButton.Size = new Size(157, 98);
+            productButton.Size = new Size(136, 74);
             productButton.TabIndex = 1;
             productButton.Text = "Product";
+            productButton.TextImageRelation = TextImageRelation.TextBeforeImage;
             productButton.UseVisualStyleBackColor = false;
             productButton.Click += productButton_Click;
             // 
@@ -137,12 +140,13 @@
             userButton.FlatAppearance.BorderSize = 4;
             userButton.FlatStyle = FlatStyle.Flat;
             userButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            userButton.Location = new Point(3, 4);
-            userButton.Margin = new Padding(3, 4, 3, 4);
+            userButton.Image = Properties.Resources.user;
+            userButton.Location = new Point(3, 3);
             userButton.Name = "userButton";
-            userButton.Size = new Size(157, 98);
+            userButton.Size = new Size(136, 74);
             userButton.TabIndex = 0;
             userButton.Text = "User";
+            userButton.TextImageRelation = TextImageRelation.TextBeforeImage;
             userButton.UseVisualStyleBackColor = false;
             userButton.Click += userButton_Click;
             // 
@@ -154,12 +158,13 @@
             button5.FlatAppearance.BorderSize = 4;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.Location = new Point(3, 110);
-            button5.Margin = new Padding(3, 4, 3, 4);
+            button5.Image = Properties.Resources.sales;
+            button5.Location = new Point(3, 83);
             button5.Name = "button5";
-            button5.Size = new Size(157, 98);
+            button5.Size = new Size(136, 74);
             button5.TabIndex = 4;
             button5.Text = "Sales";
+            button5.TextImageRelation = TextImageRelation.TextBeforeImage;
             button5.UseVisualStyleBackColor = false;
             // 
             // categoryButton
@@ -170,21 +175,22 @@
             categoryButton.FlatAppearance.BorderSize = 4;
             categoryButton.FlatStyle = FlatStyle.Flat;
             categoryButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            categoryButton.Location = new Point(166, 110);
-            categoryButton.Margin = new Padding(3, 4, 3, 4);
+            categoryButton.Image = Properties.Resources.category;
+            categoryButton.Location = new Point(145, 83);
             categoryButton.Name = "categoryButton";
-            categoryButton.Size = new Size(157, 98);
+            categoryButton.Size = new Size(136, 74);
             categoryButton.TabIndex = 5;
             categoryButton.Text = "Category";
+            categoryButton.TextImageRelation = TextImageRelation.TextBeforeImage;
             categoryButton.UseVisualStyleBackColor = false;
             categoryButton.Click += categoryButton_Click;
             // 
             // Home
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
-            Margin = new Padding(3, 5, 3, 5);
+            ClientSize = new Size(800, 450);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Home";
             Text = "Home";
             leftPanel.ResumeLayout(false);

@@ -1,5 +1,4 @@
-﻿using ims.CRUD;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,11 +15,6 @@ namespace ims
         public Home()
         {
             InitializeComponent();
-        }
-
-        private void Home_Load(object sender, EventArgs e)
-        {
-            auth_usr_name.Text = Retrieval.usr_name;
         }
 
         private void userButton_Click(object sender, EventArgs e)

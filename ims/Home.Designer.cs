@@ -48,15 +48,12 @@
             // 
             rightPanel.Controls.Add(tableLayoutPanel1);
             rightPanel.Margin = new Padding(3, 5, 3, 5);
+            rightPanel.Size = new Size(571, 450);
             rightPanel.Controls.SetChildIndex(tableLayoutPanel1, 0);
             // 
             // panel1
             // 
             panel1.Margin = new Padding(3, 5, 3, 5);
-            // 
-            // auth_usr_name
-            // 
-            auth_usr_name.Text = "User";
             // 
             // tableLayoutPanel1
             // 
@@ -196,7 +193,6 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Home";
             Text = "Home";
-            Load += Home_Load;
             leftPanel.ResumeLayout(false);
             rightPanel.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);

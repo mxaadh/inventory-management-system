@@ -10,10 +10,6 @@ namespace ims.CRUD
 {
     internal class Retrieval
     {
-        public static bool checkLogin = false;
-        public static int? usr_id { get; private set; }
-        public static string? usr_name { get; private set; }
-
         public void showUser(
             DataGridView gv, 
             DataGridViewColumn userIDGV, 
@@ -154,41 +150,6 @@ namespace ims.CRUD
 
                 gv.DataSource = dt;
             } catch (Exception) { throw; }
-        }
-
-        public static bool authUser(string username, string password)
-        {
-            try
-            {
-                SqlCommand cmd = new SqlCommand("st_loginUser", Main.con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@_usr_username", username);
-                cmd.Parameters.AddWithValue("@_usr_password", password);
-                Main.con.Open();
-
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.HasRows)
-                {
-                    checkLogin = true;
-                    while (dr.Read())
-                    {
-                        usr_id = Convert.ToInt32(dr["ID"].ToString());
-                        usr_name = dr["Name"].ToString();
-                    }
-                }
-                else
-                {
-                    checkLogin = false;
-                    Main.ShowMSG("Incorrect Username or Password", "Login Failed", "Error");
-                }
-            } 
-            catch (Exception ex) 
-            {
-                Main.ShowMSG("Unable to login. " + ex.Message, "Login Failed", "Error");
-            }
-
-            Main.con.Close();
-            return checkLogin;
         }
     }
 }

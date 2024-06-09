@@ -30,8 +30,9 @@
         {
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
-            exitToolStripMenuItem = new ToolStripMenuItem();
             settingsToolStripMenuItem = new ToolStripMenuItem();
+            exitToolStripMenuItem = new ToolStripMenuItem();
+            logoutToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -46,10 +47,18 @@
             // 
             // fileToolStripMenuItem
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { settingsToolStripMenuItem, exitToolStripMenuItem });
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { settingsToolStripMenuItem, logoutToolStripMenuItem, exitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new Size(37, 20);
             fileToolStripMenuItem.Text = "File";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            settingsToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Alt | Keys.S;
+            settingsToolStripMenuItem.Size = new Size(180, 22);
+            settingsToolStripMenuItem.Text = "Settings";
+            settingsToolStripMenuItem.Click += settingsToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
@@ -59,13 +68,13 @@
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
-            // settingsToolStripMenuItem
+            // logoutToolStripMenuItem
             // 
-            settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            settingsToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Alt | Keys.S;
-            settingsToolStripMenuItem.Size = new Size(180, 22);
-            settingsToolStripMenuItem.Text = "Settings";
-            settingsToolStripMenuItem.Click += settingsToolStripMenuItem_Click;
+            logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            logoutToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.L;
+            logoutToolStripMenuItem.Size = new Size(180, 22);
+            logoutToolStripMenuItem.Text = "Logout";
+            logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
             // 
             // MDI
             // 
@@ -91,5 +100,6 @@
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripMenuItem settingsToolStripMenuItem;
+        public static ToolStripMenuItem logoutToolStripMenuItem;
     }
 }

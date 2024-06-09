@@ -8,11 +8,6 @@ namespace ims.CRUD
     internal class Insertion
     {
         public Insertion() => Main.con.Open();
-        // ~Insertion()
-        // {
-        //     Main.con.Close();
-        //     MessageBox.Show("destructor called");
-        // }
 
         public void InsertUser(string name, string username, string password, string email, string phone, Int16 status)
         {
@@ -27,13 +22,14 @@ namespace ims.CRUD
                 cmd.Parameters.AddWithValue("@_usr_email", email);
                 cmd.Parameters.AddWithValue("@_usr_status", status);
                 cmd.ExecuteNonQuery();
-                Main.con.Close();
                 Main.ShowMSG("User Inserted Successfully", "Success", "Success");
             }
             catch (Exception ex)
             {
                 Main.ShowMSG("Error While Inserting User. " + ex.Message, "Error", "Error");
             }
+
+            Main.con.Close();
         }
 
         public void InsertCategory(string name, Int16 status)
@@ -45,16 +41,17 @@ namespace ims.CRUD
                 cmd.Parameters.AddWithValue("@_cat_name", name);
                 cmd.Parameters.AddWithValue("@_cat_status", status);
                 cmd.ExecuteNonQuery();
-                Main.con.Close();
                 Main.ShowMSG("Category Inserted Successfully", "Success", "Success");
             }
             catch (Exception ex)
             {
                 Main.ShowMSG("Error While Inserting Category. " + ex.Message, "Error", "Error");
             }
+            
+            Main.con.Close();
         }
 
-        public void InsertProduct(int catID, string name, string barcode, DateTime expiryDate, float price, short status)
+        public void InsertProduct(int catID, string name, string barcode, float price, short status, DateTime? expiryDate = null)
         {
             try
             {
@@ -63,17 +60,25 @@ namespace ims.CRUD
                 cmd.Parameters.AddWithValue("@_pro_cat_id", catID);
                 cmd.Parameters.AddWithValue("@_pro_name", name);
                 cmd.Parameters.AddWithValue("@_pro_barcode", barcode);
-                cmd.Parameters.AddWithValue("@_pro_expiry_date", expiryDate);
+                if (expiryDate == null)
+                {
+                    cmd.Parameters.AddWithValue("@_pro_expiry_date", DBNull.Value);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@_pro_expiry_date", expiryDate);
+                }
                 cmd.Parameters.AddWithValue("@_pro_price", price);
                 cmd.Parameters.AddWithValue("@_pro_status", status);
                 cmd.ExecuteNonQuery();
-                Main.con.Close();
                 Main.ShowMSG("Product Inserted Successfully", "Success", "Success");
             }
             catch (Exception ex)
             {
                 Main.ShowMSG("Error While Inserting Product. " + ex.Message, "Error", "Error");
             }
+            
+            Main.con.Close();
         }
     }
 }

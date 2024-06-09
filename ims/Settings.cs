@@ -51,13 +51,13 @@ namespace ims
 
             if (isIntegratedSecurity.Checked)
             {
-                connectionString = "Data Source = " + server + "; Initial Catalog = " + database + "; Integrated Security = True; Trust Server Certificate = True";
+                connectionString = "Data Source = " + server + "; Initial Catalog = " + database + "; Integrated Security = True;";
             }
             else
             {
                 if (username != string.Empty && password != string.Empty)
                 {
-                    connectionString = "Data Source = " + server + "; Initial Catalog = " + database + "; User ID = " + username + "; Password = " + password + "; Trust Server Certificate = True";
+                    connectionString = "Data Source = " + server + "; Initial Catalog = " + database + "; User ID = " + username + "; Password = " + password +";";
                 }
                 else
                 {

@@ -60,6 +60,18 @@ namespace ims
                     cb.Enabled = false;
                     cb.Checked = false;
                 }
+                if (c is DateTimePicker)
+                {
+                    DateTimePicker dtp = (DateTimePicker)c;
+                    dtp.Enabled = false;
+                    dtp.Value = DateTime.Now;
+                }
+                if (c is NumericUpDown)
+                {
+                    NumericUpDown nud = (NumericUpDown)c;
+                    nud.Enabled = false;
+                    nud.Value = 0;
+                }
             }
         }
 
@@ -86,6 +98,16 @@ namespace ims
                 {
                     CheckBox cb = (CheckBox)c;
                     cb.Enabled = false;
+                }
+                if (c is DateTimePicker)
+                {
+                    DateTimePicker dtp = (DateTimePicker)c;
+                    dtp.Enabled = false;
+                }
+                if (c is NumericUpDown)
+                {
+                    NumericUpDown nud = (NumericUpDown)c;
+                    nud.Enabled = false;
                 }
             }
         }
@@ -118,6 +140,18 @@ namespace ims
                     cb.Enabled = true;
                     cb.Checked = false;
                 }
+                if (c is DateTimePicker)
+                {
+                    DateTimePicker dtp = (DateTimePicker)c;
+                    dtp.Enabled = true;
+                    dtp.Value = DateTime.Now;
+                }
+                if (c is NumericUpDown)
+                {
+                    NumericUpDown nud = (NumericUpDown)c;
+                    nud.Enabled = true;
+                    nud.Value = 0;
+                }
             }
         }
 
@@ -144,6 +178,16 @@ namespace ims
                 {
                     CheckBox cb = (CheckBox)c;
                     cb.Enabled = true;
+                }
+                if (c is DateTimePicker)
+                {
+                    DateTimePicker dtp = (DateTimePicker)c;
+                    dtp.Enabled = true;
+                }
+                if (c is NumericUpDown)
+                {
+                    NumericUpDown nud = (NumericUpDown)c;
+                    nud.Enabled = true;
                 }
             }
         }

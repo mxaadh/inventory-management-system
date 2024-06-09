@@ -14,7 +14,6 @@ namespace ims.CRUD
     internal class Updation
     {
         public Updation() => Main.con.Open();
-        // ~Updation() => Main.con.Close();
 
         public void UpdateUser(int id, string name, string username, string password, string email, string phone, Int16 status)
         {
@@ -30,13 +29,14 @@ namespace ims.CRUD
                 cmd.Parameters.AddWithValue("@_usr_status", status);
                 cmd.Parameters.AddWithValue("@_id", id);
                 cmd.ExecuteNonQuery();
-                Main.con.Close();
                 Main.ShowMSG("User Updated Successfully", "Success", "Success");
             }
             catch (Exception ex)
             {
                 Main.ShowMSG("Error While Updating User. " + ex.Message, "Error", "Error");
             }
+
+            Main.con.Close();
         }
 
         public void UpdateCategory(int id, string name, Int16 status)
@@ -49,13 +49,45 @@ namespace ims.CRUD
                 cmd.Parameters.AddWithValue("@_cat_status", status);
                 cmd.Parameters.AddWithValue("@_id", id);
                 cmd.ExecuteNonQuery();
-                Main.con.Close();
                 Main.ShowMSG("Category Updated Successfully", "Success", "Success");
             }
             catch (Exception ex)
             {
                 Main.ShowMSG("Error While Updating Category. " + ex.Message, "Error", "Error");
             }
+
+            Main.con.Close();
+        }
+
+        public void UpdateProduct(int id, int catID, string name, string barcode, float price, short status, DateTime? expiryDate = null)
+        {
+            try 
+            {
+                SqlCommand cmd = new SqlCommand("st_updateProducts", Main.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_pro_cat_id", catID);
+                cmd.Parameters.AddWithValue("@_pro_name", name);
+                cmd.Parameters.AddWithValue("@_pro_barcode", barcode);
+                if (expiryDate == null)
+                {
+                    cmd.Parameters.AddWithValue("@_pro_expiry_date", DBNull.Value);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@_pro_expiry_date", expiryDate);
+                }
+                cmd.Parameters.AddWithValue("@_pro_price", price);
+                cmd.Parameters.AddWithValue("@_pro_status", status);
+                cmd.Parameters.AddWithValue("@_id", id);
+                cmd.ExecuteNonQuery();
+                Main.ShowMSG("Product Updated Successfully", "Success", "Success");
+            }
+            catch (Exception ex)
+            {
+                Main.ShowMSG("Error While Updating Product. " + ex.Message, "Error", "Error");
+            }
+
+            Main.con.Close();
         }
     }
 }

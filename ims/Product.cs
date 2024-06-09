@@ -17,6 +17,7 @@ namespace ims
     {
         private int edit;
         private Retrieval retrieval = new Retrieval();
+        private int proID;
 
         public Product()
         {
@@ -33,13 +34,13 @@ namespace ims
         {
             Main.disable(leftPanel);
             edit = 0;
+            retrieval.getDropDownList("st_getCategoyList", categoryDD);
         }
 
         public override void addBtn_Click(object sender, EventArgs e)
         {
             Main.enable_reset(leftPanel);
             edit = 0;
-            retrieval.getDropDownList("st_getCategoyList", categoryDD);
         }
 
         public override void editBtn_Click(object sender, EventArgs e)
@@ -62,6 +63,10 @@ namespace ims
                 expiryDateErrorLabel.Text = "*";
                 expiryDateErrorLabel.Visible = false;
             }
+            if (expiryDateTxt.Value.Date == DateTime.Now.Date)
+            {
+                expiryDateErrorLabel.Visible = false;
+            }
             priceErrorLabel.Visible = (priceTxt.Text == "") ? true : false;
             categoryErrorLabel.Visible = (categoryDD.SelectedIndex == -1) ? true : false;
             statusErrorLabel.Visible = (statusDD.SelectedIndex == -1) ? true : false;
@@ -73,13 +78,14 @@ namespace ims
             else
             {
                 short status = (short)((statusDD.SelectedIndex == 0) ? 1 : 0);
+                DateTime? expiryDate = (expiryDateTxt.Value.Date == DateTime.Now.Date) ? null : expiryDateTxt.Value;
 
                 if (edit == 0)
                 {
                     // Insert Data
                     Insertion insertion = new Insertion();
-                    insertion.InsertProduct(Convert.ToInt32(categoryDD.SelectedValue), nameTxt.Text, barcodeTxt.Text, expiryDateTxt.Value, Convert.ToSingle(priceTxt.Text), status);
-                    retrieval.showProduct(dataGridView1, proIDGV, NameGV, BarcodeGV, ExpiryDateGV, PriceGV, CategoryGV, StatusGV);
+                    insertion.InsertProduct(Convert.ToInt32(categoryDD.SelectedValue), nameTxt.Text, barcodeTxt.Text, Convert.ToSingle(priceTxt.Text), status, expiryDate);
+                    retrieval.showProduct(dataGridView1, proIDGV, catIDGV, NameGV, BarcodeGV, ExpiryDateGV, PriceGV, CategoryGV, StatusGV);
                     Main.disable_reset(leftPanel);
                 }
                 else if (edit == 1)
@@ -89,8 +95,8 @@ namespace ims
                     {
                         // Update Data
                         Updation updation = new Updation();
-                        // updation.UpdateUser(userID, nameTxt.Text, usernameTxt.Text, passwordTxt.Text, emailTxt.Text, phoneTxt.Text, status);
-                        // retrieval.showUser(dataGridView1, userIDGV, NameGV, UserNameGV, PassGV, EmailGV, PhoneGV, StatusGV);
+                        updation.UpdateProduct(proID, Convert.ToInt32(categoryDD.SelectedValue), nameTxt.Text, barcodeTxt.Text, Convert.ToSingle(priceTxt.Text), status, expiryDate);
+                        retrieval.showProduct(dataGridView1, proIDGV, catIDGV, NameGV, BarcodeGV, ExpiryDateGV, PriceGV, CategoryGV, StatusGV);
                         Main.disable_reset(leftPanel);
                     }
                 }
@@ -99,17 +105,44 @@ namespace ims
 
         public override void deleteBtn_Click(object sender, EventArgs e)
         {
-
+            if (edit == 1)
+            {
+                DialogResult dr = MessageBox.Show("Are you sure you want to delete record?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    Deletion deletion = new Deletion();
+                    deletion.Delete("st_deleteProducts", "@_id", proID);
+                    retrieval.showProduct(dataGridView1, proIDGV, catIDGV, NameGV, BarcodeGV, ExpiryDateGV, PriceGV, CategoryGV, StatusGV);
+                }
+            }
         }
 
         public override void viewBtn_Click(object sender, EventArgs e)
         {
-            retrieval.showProduct(dataGridView1, proIDGV, NameGV, BarcodeGV, ExpiryDateGV, PriceGV, CategoryGV, StatusGV);
+            retrieval.showProduct(dataGridView1, proIDGV, catIDGV, NameGV, BarcodeGV, ExpiryDateGV, PriceGV, CategoryGV, StatusGV);
         }
 
         public override void searchBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Main.disable(leftPanel);
+
+            if (e.RowIndex != -1 && e.ColumnIndex != -1)
+            {
+                edit = 1;
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                proID = Convert.ToInt32(row.Cells["proIDGV"].Value.ToString());
+                nameTxt.Text = row.Cells["NameGV"].Value.ToString();
+                barcodeTxt.Text = row.Cells["BarcodeGV"].Value.ToString();
+                expiryDateTxt.Value = (row.Cells["ExpiryDateGV"].Value.ToString() != string.Empty) ? Convert.ToDateTime(row.Cells["ExpiryDateGV"].Value.ToString()) : DateTime.Now;
+                priceTxt.Value = Convert.ToInt32(row.Cells["PriceGV"].Value);
+                categoryDD.SelectedValue= row.Cells["catIDGV"].Value.ToString();
+                statusDD.SelectedItem = row.Cells["StatusGV"].Value.ToString();
+            }
         }
     }
 }

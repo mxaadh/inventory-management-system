@@ -124,7 +124,16 @@ namespace ims.CRUD
         ) {
             try
             {
-                SqlCommand cmd = new SqlCommand("st_getProductsData", Main.con);
+                SqlCommand cmd;
+                if (q == null)
+                {
+                    cmd = new SqlCommand("st_getProductsData", Main.con);
+                }
+                else
+                {
+                    cmd = new SqlCommand("st_searchProductsData", Main.con);
+                    cmd.Parameters.AddWithValue("@_q", q);
+                }
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

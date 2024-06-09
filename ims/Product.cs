@@ -124,7 +124,14 @@ namespace ims
 
         public override void searchBox_TextChanged(object sender, EventArgs e)
         {
-
+            if (searchBox.Text != string.Empty)
+            {
+                retrieval.showProduct(dataGridView1, proIDGV, catIDGV, NameGV, BarcodeGV, ExpiryDateGV, PriceGV, CategoryGV, StatusGV, searchBox.Text);
+            }
+            else
+            {
+                retrieval.showProduct(dataGridView1, proIDGV, catIDGV, NameGV, BarcodeGV, ExpiryDateGV, PriceGV, CategoryGV, StatusGV);
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

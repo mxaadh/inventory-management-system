@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ims.CRUD;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,9 +25,33 @@ namespace ims
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            Home home = new Home();
-            Main.showWindow(home, login, MDI.ActiveForm);
+            usernameErrorLabel.Visible = (usernametext.Text == string.Empty) ? true : false;
+            passwordErrorLabel.Visible = (passwordText.Text == string.Empty) ? true : false;
+
+            if (usernameErrorLabel.Visible || passwordErrorLabel.Visible)
+            {
+                Main.ShowMSG("Fields with * are medatory", "Stop", "Error");
+            }
+            else
+            {
+                if (Retrieval.authUser(usernametext.Text, passwordText.Text))
+                {
+                    Login login = new Login();
+                    Home home = new Home();
+                    Main.showWindow(home, login, MDI.ActiveForm);
+                }
+            }
+
+        }
+
+        private void usernametext_TextChanged(object sender, EventArgs e)
+        {
+            usernameErrorLabel.Visible = (usernametext.Text == string.Empty) ? true : false;
+        }
+
+        private void passwordText_TextChanged(object sender, EventArgs e)
+        {
+            passwordErrorLabel.Visible = (passwordText.Text == string.Empty) ? true : false;
         }
     }
 }

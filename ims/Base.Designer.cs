@@ -33,7 +33,7 @@
             label1 = new Label();
             rightPanel = new Panel();
             panel2 = new Panel();
-            label2 = new Label();
+            auth_usr_name = new Label();
             leftPanel.SuspendLayout();
             panel1.SuspendLayout();
             rightPanel.SuspendLayout();
@@ -86,7 +86,7 @@
             // panel2
             // 
             panel2.BackColor = SystemColors.Control;
-            panel2.Controls.Add(label2);
+            panel2.Controls.Add(auth_usr_name);
             panel2.Dock = DockStyle.Top;
             panel2.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             panel2.ForeColor = SystemColors.HotTrack;
@@ -96,17 +96,17 @@
             panel2.Size = new Size(652, 67);
             panel2.TabIndex = 0;
             // 
-            // label2
+            // auth_usr_name
             // 
-            label2.BackColor = SystemColors.Control;
-            label2.Dock = DockStyle.Left;
-            label2.ForeColor = SystemColors.HotTrack;
-            label2.Location = new Point(0, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(339, 67);
-            label2.TabIndex = 1;
-            label2.Text = "Saad Hassan";
-            label2.TextAlign = ContentAlignment.MiddleLeft;
+            auth_usr_name.BackColor = SystemColors.Control;
+            auth_usr_name.Dock = DockStyle.Left;
+            auth_usr_name.ForeColor = SystemColors.HotTrack;
+            auth_usr_name.Location = new Point(0, 0);
+            auth_usr_name.Name = "auth_usr_name";
+            auth_usr_name.Size = new Size(339, 67);
+            auth_usr_name.TabIndex = 1;
+            auth_usr_name.Text = "User";
+            auth_usr_name.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Base
             // 
@@ -132,6 +132,6 @@
         protected Panel panel1;
         private Label label1;
         private Panel panel2;
-        private Label label2;
+        protected Label auth_usr_name;
     }
 }

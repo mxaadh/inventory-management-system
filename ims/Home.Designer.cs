@@ -193,6 +193,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Home";
             Text = "Home";
+            Load += Home_Load;
             leftPanel.ResumeLayout(false);
             rightPanel.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);

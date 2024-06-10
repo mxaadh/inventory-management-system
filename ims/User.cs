@@ -95,6 +95,7 @@ namespace ims
                     Deletion deletion = new Deletion();
                     deletion.Delete("st_deleteUsers", "@_id", userID);
                     retrieval.showUser(dataGridView1, userIDGV, NameGV, UserNameGV, PassGV, EmailGV, PhoneGV, StatusGV);
+                    Main.disable_reset(leftPanel);
                 }
             }
         }

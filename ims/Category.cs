@@ -93,6 +93,7 @@ namespace ims
                     Deletion deletion = new Deletion();
                     deletion.Delete("st_deleteCategoies", "@_id", catID);
                     retrieval.showCategory(dataGridView1, catIDGV, catNameGV, catStatusGV);
+                    Main.disable_reset(leftPanel);
                 }
             }
         }

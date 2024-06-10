@@ -14,6 +14,41 @@ namespace ims.CRUD
         public static int? usr_id { get; private set; }
         public static string? usr_name { get; private set; }
 
+        public static bool authUser(string username, string password)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("st_loginUser", Main.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_usr_username", username);
+                cmd.Parameters.AddWithValue("@_usr_password", password);
+                Main.con.Open();
+
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    checkLogin = true;
+                    while (dr.Read())
+                    {
+                        usr_id = Convert.ToInt32(dr["ID"].ToString());
+                        usr_name = dr["Name"].ToString();
+                    }
+                }
+                else
+                {
+                    checkLogin = false;
+                    Main.ShowMSG("Incorrect Username or Password", "Login Failed", "Error");
+                }
+            }
+            catch (Exception ex)
+            {
+                Main.ShowMSG("Unable to login. " + ex.Message, "Login Failed", "Error");
+            }
+
+            Main.con.Close();
+            return checkLogin;
+        }
+
         public void showUser(
             DataGridView gv, 
             DataGridViewColumn userIDGV, 
@@ -156,39 +191,48 @@ namespace ims.CRUD
             } catch (Exception) { throw; }
         }
 
-        public static bool authUser(string username, string password)
+        public void showSupplier(
+            DataGridView gv,
+            DataGridViewColumn supIDGV,
+            DataGridViewColumn NameGV,
+            DataGridViewColumn ContectPersonGV,
+            DataGridViewColumn Phone1GV,
+            DataGridViewColumn Phone2GV,
+            DataGridViewColumn AddressGV,
+            DataGridViewColumn NTNGV,
+            DataGridViewColumn StatusGV,
+            string? q = null
+        )
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("st_loginUser", Main.con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@_usr_username", username);
-                cmd.Parameters.AddWithValue("@_usr_password", password);
-                Main.con.Open();
-
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.HasRows)
+                SqlCommand cmd;
+                if (q == null)
                 {
-                    checkLogin = true;
-                    while (dr.Read())
-                    {
-                        usr_id = Convert.ToInt32(dr["ID"].ToString());
-                        usr_name = dr["Name"].ToString();
-                    }
+                    cmd = new SqlCommand("st_getSuppliersDate", Main.con);
                 }
                 else
                 {
-                    checkLogin = false;
-                    Main.ShowMSG("Incorrect Username or Password", "Login Failed", "Error");
+                    cmd = new SqlCommand("st_searchSuppliersDate", Main.con);
+                    cmd.Parameters.AddWithValue("@_q", q);
                 }
-            }
-            catch (Exception ex)
-            {
-                Main.ShowMSG("Unable to login. " + ex.Message, "Login Failed", "Error");
-            }
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
 
-            Main.con.Close();
-            return checkLogin;
+                supIDGV.DataPropertyName = dt.Columns["ID"].ToString();
+                NameGV.DataPropertyName = dt.Columns["Name"].ToString();
+                ContectPersonGV.DataPropertyName = dt.Columns["Contect Person"].ToString();
+                Phone1GV.DataPropertyName = dt.Columns["Phone 1"].ToString();
+                Phone2GV.DataPropertyName = dt.Columns["Phone 2"].ToString();
+                AddressGV.DataPropertyName = dt.Columns["Address"].ToString();
+                NTNGV.DataPropertyName = dt.Columns["NTN"].ToString();
+                StatusGV.DataPropertyName = dt.Columns["Status"].ToString();
+
+                gv.DataSource = dt;
+            }
+            catch (Exception) { throw; }
         }
     }
 }

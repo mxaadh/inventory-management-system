@@ -89,5 +89,30 @@ namespace ims.CRUD
 
             Main.con.Close();
         }
+
+        public void UpdateSupplier(int id, string name, string contectPerson, string phone1, string address, short status, string? phone2, string? ntn)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("st_updateSuppliers", Main.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_sup_name", name);
+                cmd.Parameters.AddWithValue("@_sup_contect_person", contectPerson);
+                cmd.Parameters.AddWithValue("@_sup_phone1", phone1);
+                cmd.Parameters.AddWithValue("@_sup_phone2", (phone2 == null) ? DBNull.Value : phone2);
+                cmd.Parameters.AddWithValue("@_sup_address", address);
+                cmd.Parameters.AddWithValue("@_sup_ntn", (ntn == null) ? DBNull.Value : ntn);
+                cmd.Parameters.AddWithValue("@_sup_status", status);
+                cmd.Parameters.AddWithValue("@_id", id);
+                cmd.ExecuteNonQuery();
+                Main.ShowMSG("Supplier Updated Successfully", "Success", "Success");
+            }
+            catch (Exception ex)
+            {
+                Main.ShowMSG("Error While Updating Supplier. " + ex.Message, "Error", "Error");
+            }
+
+            Main.con.Close();
+        }
     }
 }

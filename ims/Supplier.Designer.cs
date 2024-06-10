@@ -30,30 +30,32 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dataGridView1 = new DataGridView();
-            catIDGV = new DataGridViewTextBoxColumn();
-            catNameGV = new DataGridViewTextBoxColumn();
-            catStatusGV = new DataGridViewTextBoxColumn();
+            supIDGV = new DataGridViewTextBoxColumn();
+            supNameGV = new DataGridViewTextBoxColumn();
+            supContectPersonGV = new DataGridViewTextBoxColumn();
+            supPhone1GV = new DataGridViewTextBoxColumn();
+            supPhone2GV = new DataGridViewTextBoxColumn();
+            supAddressGV = new DataGridViewTextBoxColumn();
+            supNTNGV = new DataGridViewTextBoxColumn();
+            supStatusGV = new DataGridViewTextBoxColumn();
             nameTxt = new TextBox();
             label3 = new Label();
             nameErrorLabel = new Label();
-            textBox1 = new TextBox();
+            contectPersonTxt = new TextBox();
             label2 = new Label();
-            label4 = new Label();
-            textBox2 = new TextBox();
+            contectPersonErrorLabel = new Label();
+            phone2Txt = new TextBox();
             label5 = new Label();
-            textBox3 = new TextBox();
+            phone1Txt = new TextBox();
             label7 = new Label();
-            label8 = new Label();
-            textBox4 = new TextBox();
+            phone1ErrorLabel = new Label();
+            addressTxt = new TextBox();
             label9 = new Label();
-            label10 = new Label();
-            textBox5 = new TextBox();
-            label11 = new Label();
-            label12 = new Label();
+            addressErrorLabel = new Label();
             statusDD = new ComboBox();
             label13 = new Label();
             statusErrorLabel = new Label();
-            textBox6 = new TextBox();
+            ntnTxt = new TextBox();
             label14 = new Label();
             actionLeftPanel.SuspendLayout();
             leftPanel.SuspendLayout();
@@ -78,25 +80,22 @@
             // 
             // leftPanel
             // 
-            leftPanel.Controls.Add(textBox6);
+            leftPanel.Controls.Add(ntnTxt);
             leftPanel.Controls.Add(label14);
             leftPanel.Controls.Add(statusDD);
             leftPanel.Controls.Add(label13);
             leftPanel.Controls.Add(statusErrorLabel);
-            leftPanel.Controls.Add(textBox4);
+            leftPanel.Controls.Add(addressTxt);
             leftPanel.Controls.Add(label9);
-            leftPanel.Controls.Add(label10);
-            leftPanel.Controls.Add(textBox5);
-            leftPanel.Controls.Add(label11);
-            leftPanel.Controls.Add(label12);
-            leftPanel.Controls.Add(textBox2);
+            leftPanel.Controls.Add(addressErrorLabel);
+            leftPanel.Controls.Add(phone2Txt);
             leftPanel.Controls.Add(label5);
-            leftPanel.Controls.Add(textBox3);
+            leftPanel.Controls.Add(phone1Txt);
             leftPanel.Controls.Add(label7);
-            leftPanel.Controls.Add(label8);
-            leftPanel.Controls.Add(textBox1);
+            leftPanel.Controls.Add(phone1ErrorLabel);
+            leftPanel.Controls.Add(contectPersonTxt);
             leftPanel.Controls.Add(label2);
-            leftPanel.Controls.Add(label4);
+            leftPanel.Controls.Add(contectPersonErrorLabel);
             leftPanel.Controls.Add(nameTxt);
             leftPanel.Controls.Add(label3);
             leftPanel.Controls.Add(nameErrorLabel);
@@ -106,25 +105,22 @@
             leftPanel.Controls.SetChildIndex(nameErrorLabel, 0);
             leftPanel.Controls.SetChildIndex(label3, 0);
             leftPanel.Controls.SetChildIndex(nameTxt, 0);
-            leftPanel.Controls.SetChildIndex(label4, 0);
+            leftPanel.Controls.SetChildIndex(contectPersonErrorLabel, 0);
             leftPanel.Controls.SetChildIndex(label2, 0);
-            leftPanel.Controls.SetChildIndex(textBox1, 0);
-            leftPanel.Controls.SetChildIndex(label8, 0);
+            leftPanel.Controls.SetChildIndex(contectPersonTxt, 0);
+            leftPanel.Controls.SetChildIndex(phone1ErrorLabel, 0);
             leftPanel.Controls.SetChildIndex(label7, 0);
-            leftPanel.Controls.SetChildIndex(textBox3, 0);
+            leftPanel.Controls.SetChildIndex(phone1Txt, 0);
             leftPanel.Controls.SetChildIndex(label5, 0);
-            leftPanel.Controls.SetChildIndex(textBox2, 0);
-            leftPanel.Controls.SetChildIndex(label12, 0);
-            leftPanel.Controls.SetChildIndex(label11, 0);
-            leftPanel.Controls.SetChildIndex(textBox5, 0);
-            leftPanel.Controls.SetChildIndex(label10, 0);
+            leftPanel.Controls.SetChildIndex(phone2Txt, 0);
+            leftPanel.Controls.SetChildIndex(addressErrorLabel, 0);
             leftPanel.Controls.SetChildIndex(label9, 0);
-            leftPanel.Controls.SetChildIndex(textBox4, 0);
+            leftPanel.Controls.SetChildIndex(addressTxt, 0);
             leftPanel.Controls.SetChildIndex(statusErrorLabel, 0);
             leftPanel.Controls.SetChildIndex(label13, 0);
             leftPanel.Controls.SetChildIndex(statusDD, 0);
             leftPanel.Controls.SetChildIndex(label14, 0);
-            leftPanel.Controls.SetChildIndex(textBox6, 0);
+            leftPanel.Controls.SetChildIndex(ntnTxt, 0);
             // 
             // rightPanel
             // 
@@ -148,7 +144,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { catIDGV, catNameGV, catStatusGV });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { supIDGV, supNameGV, supContectPersonGV, supPhone1GV, supPhone2GV, supAddressGV, supNTNGV, supStatusGV });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 100);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
@@ -159,28 +155,59 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(571, 407);
             dataGridView1.TabIndex = 3;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
-            // catIDGV
+            // supIDGV
             // 
-            catIDGV.HeaderText = "Category ID";
-            catIDGV.MinimumWidth = 6;
-            catIDGV.Name = "catIDGV";
-            catIDGV.ReadOnly = true;
-            catIDGV.Visible = false;
+            supIDGV.HeaderText = "Supplier ID";
+            supIDGV.MinimumWidth = 6;
+            supIDGV.Name = "supIDGV";
+            supIDGV.ReadOnly = true;
+            supIDGV.Visible = false;
             // 
-            // catNameGV
+            // supNameGV
             // 
-            catNameGV.HeaderText = "Name";
-            catNameGV.MinimumWidth = 6;
-            catNameGV.Name = "catNameGV";
-            catNameGV.ReadOnly = true;
+            supNameGV.HeaderText = "Name / Company";
+            supNameGV.MinimumWidth = 6;
+            supNameGV.Name = "supNameGV";
+            supNameGV.ReadOnly = true;
             // 
-            // catStatusGV
+            // supContectPersonGV
             // 
-            catStatusGV.HeaderText = "Status";
-            catStatusGV.MinimumWidth = 6;
-            catStatusGV.Name = "catStatusGV";
-            catStatusGV.ReadOnly = true;
+            supContectPersonGV.HeaderText = "Contect Person";
+            supContectPersonGV.Name = "supContectPersonGV";
+            supContectPersonGV.ReadOnly = true;
+            // 
+            // supPhone1GV
+            // 
+            supPhone1GV.HeaderText = "Phone 1";
+            supPhone1GV.Name = "supPhone1GV";
+            supPhone1GV.ReadOnly = true;
+            // 
+            // supPhone2GV
+            // 
+            supPhone2GV.HeaderText = "Phone 2";
+            supPhone2GV.Name = "supPhone2GV";
+            supPhone2GV.ReadOnly = true;
+            // 
+            // supAddressGV
+            // 
+            supAddressGV.HeaderText = "Address";
+            supAddressGV.Name = "supAddressGV";
+            supAddressGV.ReadOnly = true;
+            // 
+            // supNTNGV
+            // 
+            supNTNGV.HeaderText = "NTN #";
+            supNTNGV.Name = "supNTNGV";
+            supNTNGV.ReadOnly = true;
+            // 
+            // supStatusGV
+            // 
+            supStatusGV.HeaderText = "Status";
+            supStatusGV.MinimumWidth = 6;
+            supStatusGV.Name = "supStatusGV";
+            supStatusGV.ReadOnly = true;
             // 
             // nameTxt
             // 
@@ -211,13 +238,13 @@
             nameErrorLabel.Text = "*";
             nameErrorLabel.Visible = false;
             // 
-            // textBox1
+            // contectPersonTxt
             // 
-            textBox1.Location = new Point(12, 177);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(206, 23);
-            textBox1.TabIndex = 21;
+            contectPersonTxt.Location = new Point(12, 177);
+            contectPersonTxt.Margin = new Padding(3, 2, 3, 2);
+            contectPersonTxt.Name = "contectPersonTxt";
+            contectPersonTxt.Size = new Size(206, 23);
+            contectPersonTxt.TabIndex = 21;
             // 
             // label2
             // 
@@ -228,25 +255,25 @@
             label2.TabIndex = 20;
             label2.Text = "Contect Person";
             // 
-            // label4
+            // contectPersonErrorLabel
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.LightCoral;
-            label4.Location = new Point(98, 154);
-            label4.Name = "label4";
-            label4.Size = new Size(22, 30);
-            label4.TabIndex = 22;
-            label4.Text = "*";
-            label4.Visible = false;
+            contectPersonErrorLabel.AutoSize = true;
+            contectPersonErrorLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            contectPersonErrorLabel.ForeColor = Color.LightCoral;
+            contectPersonErrorLabel.Location = new Point(98, 154);
+            contectPersonErrorLabel.Name = "contectPersonErrorLabel";
+            contectPersonErrorLabel.Size = new Size(22, 30);
+            contectPersonErrorLabel.TabIndex = 22;
+            contectPersonErrorLabel.Text = "*";
+            contectPersonErrorLabel.Visible = false;
             // 
-            // textBox2
+            // phone2Txt
             // 
-            textBox2.Location = new Point(11, 273);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(206, 23);
-            textBox2.TabIndex = 27;
+            phone2Txt.Location = new Point(11, 273);
+            phone2Txt.Margin = new Padding(3, 2, 3, 2);
+            phone2Txt.Name = "phone2Txt";
+            phone2Txt.Size = new Size(206, 23);
+            phone2Txt.TabIndex = 27;
             // 
             // label5
             // 
@@ -257,13 +284,13 @@
             label5.TabIndex = 26;
             label5.Text = "Phone 2";
             // 
-            // textBox3
+            // phone1Txt
             // 
-            textBox3.Location = new Point(11, 225);
-            textBox3.Margin = new Padding(3, 2, 3, 2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(206, 23);
-            textBox3.TabIndex = 24;
+            phone1Txt.Location = new Point(11, 225);
+            phone1Txt.Margin = new Padding(3, 2, 3, 2);
+            phone1Txt.Name = "phone1Txt";
+            phone1Txt.Size = new Size(206, 23);
+            phone1Txt.TabIndex = 24;
             // 
             // label7
             // 
@@ -274,82 +301,53 @@
             label7.TabIndex = 23;
             label7.Text = "Phone 1";
             // 
-            // label8
+            // phone1ErrorLabel
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.LightCoral;
-            label8.Location = new Point(59, 202);
-            label8.Name = "label8";
-            label8.Size = new Size(22, 30);
-            label8.TabIndex = 25;
-            label8.Text = "*";
-            label8.Visible = false;
+            phone1ErrorLabel.AutoSize = true;
+            phone1ErrorLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            phone1ErrorLabel.ForeColor = Color.LightCoral;
+            phone1ErrorLabel.Location = new Point(59, 202);
+            phone1ErrorLabel.Name = "phone1ErrorLabel";
+            phone1ErrorLabel.Size = new Size(22, 30);
+            phone1ErrorLabel.TabIndex = 25;
+            phone1ErrorLabel.Text = "*";
+            phone1ErrorLabel.Visible = false;
             // 
-            // textBox4
+            // addressTxt
             // 
-            textBox4.Location = new Point(11, 369);
-            textBox4.Margin = new Padding(3, 2, 3, 2);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(206, 23);
-            textBox4.TabIndex = 33;
+            addressTxt.Location = new Point(11, 321);
+            addressTxt.Margin = new Padding(3, 2, 3, 2);
+            addressTxt.Name = "addressTxt";
+            addressTxt.Size = new Size(206, 23);
+            addressTxt.TabIndex = 33;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(11, 350);
+            label9.Location = new Point(11, 302);
             label9.Name = "label9";
             label9.Size = new Size(49, 15);
             label9.TabIndex = 32;
             label9.Text = "Address";
             // 
-            // label10
+            // addressErrorLabel
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.ForeColor = Color.LightCoral;
-            label10.Location = new Point(58, 346);
-            label10.Name = "label10";
-            label10.Size = new Size(22, 30);
-            label10.TabIndex = 34;
-            label10.Text = "*";
-            label10.Visible = false;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(11, 321);
-            textBox5.Margin = new Padding(3, 2, 3, 2);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(206, 23);
-            textBox5.TabIndex = 30;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(11, 302);
-            label11.Name = "label11";
-            label11.Size = new Size(39, 15);
-            label11.TabIndex = 29;
-            label11.Text = "Name";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.ForeColor = Color.LightCoral;
-            label12.Location = new Point(48, 298);
-            label12.Name = "label12";
-            label12.Size = new Size(22, 30);
-            label12.TabIndex = 31;
-            label12.Text = "*";
-            label12.Visible = false;
+            addressErrorLabel.AutoSize = true;
+            addressErrorLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            addressErrorLabel.ForeColor = Color.LightCoral;
+            addressErrorLabel.Location = new Point(58, 298);
+            addressErrorLabel.Name = "addressErrorLabel";
+            addressErrorLabel.Size = new Size(22, 30);
+            addressErrorLabel.TabIndex = 34;
+            addressErrorLabel.Text = "*";
+            addressErrorLabel.Visible = false;
             // 
             // statusDD
             // 
             statusDD.DropDownStyle = ComboBoxStyle.DropDownList;
             statusDD.FormattingEnabled = true;
             statusDD.Items.AddRange(new object[] { "Active", "In-active" });
-            statusDD.Location = new Point(10, 464);
+            statusDD.Location = new Point(10, 416);
             statusDD.Margin = new Padding(3, 2, 3, 2);
             statusDD.Name = "statusDD";
             statusDD.Size = new Size(207, 23);
@@ -358,7 +356,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(10, 447);
+            label13.Location = new Point(10, 399);
             label13.Name = "label13";
             label13.Size = new Size(39, 15);
             label13.TabIndex = 35;
@@ -369,29 +367,29 @@
             statusErrorLabel.AutoSize = true;
             statusErrorLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             statusErrorLabel.ForeColor = Color.LightCoral;
-            statusErrorLabel.Location = new Point(48, 442);
+            statusErrorLabel.Location = new Point(48, 394);
             statusErrorLabel.Name = "statusErrorLabel";
             statusErrorLabel.Size = new Size(22, 30);
             statusErrorLabel.TabIndex = 36;
             statusErrorLabel.Text = "*";
             statusErrorLabel.Visible = false;
             // 
-            // textBox6
+            // ntnTxt
             // 
-            textBox6.Location = new Point(11, 417);
-            textBox6.Margin = new Padding(3, 2, 3, 2);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(206, 23);
-            textBox6.TabIndex = 39;
+            ntnTxt.Location = new Point(11, 369);
+            ntnTxt.Margin = new Padding(3, 2, 3, 2);
+            ntnTxt.Name = "ntnTxt";
+            ntnTxt.Size = new Size(206, 23);
+            ntnTxt.TabIndex = 39;
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(11, 398);
+            label14.Location = new Point(11, 350);
             label14.Name = "label14";
-            label14.Size = new Size(31, 15);
+            label14.Size = new Size(41, 15);
             label14.TabIndex = 38;
-            label14.Text = "NTN";
+            label14.Text = "NTN #";
             // 
             // Supplier
             // 
@@ -414,30 +412,32 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn catIDGV;
-        private DataGridViewTextBoxColumn catNameGV;
-        private DataGridViewTextBoxColumn catStatusGV;
         private TextBox nameTxt;
         private Label label3;
         private Label nameErrorLabel;
-        private TextBox textBox4;
+        private TextBox addressTxt;
         private Label label9;
-        private Label label10;
-        private TextBox textBox5;
-        private Label label11;
-        private Label label12;
-        private TextBox textBox2;
+        private Label addressErrorLabel;
+        private TextBox phone2Txt;
         private Label label5;
-        private TextBox textBox3;
+        private TextBox phone1Txt;
         private Label label7;
-        private Label label8;
-        private TextBox textBox1;
+        private Label phone1ErrorLabel;
+        private TextBox contectPersonTxt;
         private Label label2;
-        private Label label4;
+        private Label contectPersonErrorLabel;
         private ComboBox statusDD;
         private Label label13;
         private Label statusErrorLabel;
-        private TextBox textBox6;
+        private TextBox ntnTxt;
         private Label label14;
+        private DataGridViewTextBoxColumn supIDGV;
+        private DataGridViewTextBoxColumn supNameGV;
+        private DataGridViewTextBoxColumn supContectPersonGV;
+        private DataGridViewTextBoxColumn supPhone1GV;
+        private DataGridViewTextBoxColumn supPhone2GV;
+        private DataGridViewTextBoxColumn supAddressGV;
+        private DataGridViewTextBoxColumn supNTNGV;
+        private DataGridViewTextBoxColumn supStatusGV;
     }
 }

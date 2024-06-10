@@ -113,6 +113,7 @@ namespace ims
                     Deletion deletion = new Deletion();
                     deletion.Delete("st_deleteProducts", "@_id", proID);
                     retrieval.showProduct(dataGridView1, proIDGV, catIDGV, NameGV, BarcodeGV, ExpiryDateGV, PriceGV, CategoryGV, StatusGV);
+                    Main.disable_reset(leftPanel);
                 }
             }
         }

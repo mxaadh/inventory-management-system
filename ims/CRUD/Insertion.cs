@@ -1,5 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -78,6 +80,30 @@ namespace ims.CRUD
                 Main.ShowMSG("Error While Inserting Product. " + ex.Message, "Error", "Error");
             }
             
+            Main.con.Close();
+        }
+
+        public void InsertSupplier(string name, string contectPerson, string phone1, string address, short status, string? phone2, string? ntn)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("st_insertSuppliers", Main.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_sup_name", name);
+                cmd.Parameters.AddWithValue("@_sup_contect_person", contectPerson);
+                cmd.Parameters.AddWithValue("@_sup_phone1", phone1);
+                cmd.Parameters.AddWithValue("@_sup_phone2", (phone2 == null) ? DBNull.Value : phone2);
+                cmd.Parameters.AddWithValue("@_sup_address", address);
+                cmd.Parameters.AddWithValue("@_sup_ntn", (ntn == null) ? DBNull.Value : ntn);
+                cmd.Parameters.AddWithValue("@_sup_status", status);
+                cmd.ExecuteNonQuery();
+                Main.ShowMSG("Supplier Inserted Successfully", "Success", "Success");
+            }
+            catch (Exception ex)
+            {
+                Main.ShowMSG("Error While Inserting Supplier. " + ex.Message, "Error", "Error");
+            }
+
             Main.con.Close();
         }
     }

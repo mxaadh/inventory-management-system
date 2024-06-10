@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             tableLayoutPanel1 = new TableLayoutPanel();
             button4 = new Button();
             button3 = new Button();
@@ -35,6 +36,7 @@
             userButton = new Button();
             button5 = new Button();
             categoryButton = new Button();
+            supplierButton = new Button();
             leftPanel.SuspendLayout();
             rightPanel.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -68,6 +70,7 @@
             tableLayoutPanel1.Controls.Add(userButton, 0, 0);
             tableLayoutPanel1.Controls.Add(button5, 0, 1);
             tableLayoutPanel1.Controls.Add(categoryButton, 1, 1);
+            tableLayoutPanel1.Controls.Add(supplierButton, 2, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 50);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -185,6 +188,24 @@
             categoryButton.UseVisualStyleBackColor = false;
             categoryButton.Click += categoryButton_Click;
             // 
+            // supplierButton
+            // 
+            supplierButton.BackColor = SystemColors.MenuHighlight;
+            supplierButton.Dock = DockStyle.Fill;
+            supplierButton.FlatAppearance.BorderColor = SystemColors.Highlight;
+            supplierButton.FlatAppearance.BorderSize = 4;
+            supplierButton.FlatStyle = FlatStyle.Flat;
+            supplierButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            supplierButton.Image = (Image)resources.GetObject("supplierButton.Image");
+            supplierButton.Location = new Point(287, 83);
+            supplierButton.Name = "supplierButton";
+            supplierButton.Size = new Size(136, 74);
+            supplierButton.TabIndex = 6;
+            supplierButton.Text = "Supplier";
+            supplierButton.TextImageRelation = TextImageRelation.TextBeforeImage;
+            supplierButton.UseVisualStyleBackColor = false;
+            supplierButton.Click += supplierButton_Click;
+            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -209,5 +230,6 @@
         private Button productButton;
         private Button button5;
         private Button categoryButton;
+        private Button supplierButton;
     }
 }

@@ -117,17 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="supplierButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAAIQAAACEATCrHSUAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
-        AAABQklEQVRIS93VvS8EQRjH8WmcSHRHREg0GlpRikbrj6Ahl8jlEqIiEo2KQusvoKWg81JKOBKd5q4R
-        SpEQ8fJ99m7iMWatmdXc/ZJPsvfM5Xl293bnTFunA+OYRJ8U/jNzeMBH0xt2UUTuLMM2dl2jG9EZxDN8
-        za1VRGcevqbaFaKzBl9T7R7RmYWvqXaO6PTiEb7GVgW5MoN3+JqfoIDcmcYNbGO5qk10QSIv4TFusS8F
-        soedxqE5g15LzQBG0Jl8+koP7PBLKZAVLDYOTQ12/VuGUYKczZYUmpnAAeQpk4F6QBVufgwYwiHce7+A
-        ftyp2jr0gCeUcYojLEG2FruebGR1VdBecOHU3AFZzLZTyBI8QH5t30Ka4AH6fv1F8ABf8TfBA7K2BtcG
-        5D/hVdXSSO/kER0LIN+XjGIqg7xXLR1jPgFdnPalaAVQFgAAAABJRU5ErkJggg==
-</value>
-  </data>
+  <metadata name="catIDGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="catNameGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="catStatusGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

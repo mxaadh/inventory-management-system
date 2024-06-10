@@ -44,5 +44,12 @@ namespace ims
             Category category = new Category();
             Main.showWindow(category, home, MDI.ActiveForm);
         }
+
+        private void supplierButton_Click(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            Supplier supplier = new Supplier();
+            Main.showWindow(supplier, home, MDI.ActiveForm);
+        }
     }
 }

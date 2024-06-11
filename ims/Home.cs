@@ -51,5 +51,26 @@ namespace ims
             Supplier supplier = new Supplier();
             Main.showWindow(supplier, home, MDI.ActiveForm);
         }
+
+        private void stockButton_Click(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            Stock stock = new Stock();
+            Main.showWindow(stock, home, MDI.ActiveForm);
+        }
+
+        private void invoiceButton_Click(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            Invoice invoice = new Invoice();
+            Main.showWindow(invoice, home, MDI.ActiveForm);
+        }
+
+        private void salesButton_Click(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            Sales sales = new Sales();
+            Main.showWindow(sales, home, MDI.ActiveForm);
+        }
     }
 }

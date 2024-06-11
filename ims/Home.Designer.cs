@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             tableLayoutPanel1 = new TableLayoutPanel();
-            button4 = new Button();
-            button3 = new Button();
+            invoiceButton = new Button();
+            stockButton = new Button();
             productButton = new Button();
             userButton = new Button();
-            button5 = new Button();
+            salesButton = new Button();
             categoryButton = new Button();
             supplierButton = new Button();
             leftPanel.SuspendLayout();
@@ -64,11 +64,11 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.Controls.Add(button4, 3, 0);
-            tableLayoutPanel1.Controls.Add(button3, 2, 0);
+            tableLayoutPanel1.Controls.Add(invoiceButton, 3, 0);
+            tableLayoutPanel1.Controls.Add(stockButton, 2, 0);
             tableLayoutPanel1.Controls.Add(productButton, 1, 0);
             tableLayoutPanel1.Controls.Add(userButton, 0, 0);
-            tableLayoutPanel1.Controls.Add(button5, 0, 1);
+            tableLayoutPanel1.Controls.Add(salesButton, 0, 1);
             tableLayoutPanel1.Controls.Add(categoryButton, 1, 1);
             tableLayoutPanel1.Controls.Add(supplierButton, 2, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
@@ -83,39 +83,41 @@
             tableLayoutPanel1.Size = new Size(571, 400);
             tableLayoutPanel1.TabIndex = 1;
             // 
-            // button4
+            // invoiceButton
             // 
-            button4.BackColor = SystemColors.MenuHighlight;
-            button4.Dock = DockStyle.Fill;
-            button4.FlatAppearance.BorderColor = SystemColors.Highlight;
-            button4.FlatAppearance.BorderSize = 4;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.Image = Properties.Resources.invoice;
-            button4.Location = new Point(429, 3);
-            button4.Name = "button4";
-            button4.Size = new Size(139, 74);
-            button4.TabIndex = 3;
-            button4.Text = "Invoice";
-            button4.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button4.UseVisualStyleBackColor = false;
+            invoiceButton.BackColor = SystemColors.MenuHighlight;
+            invoiceButton.Dock = DockStyle.Fill;
+            invoiceButton.FlatAppearance.BorderColor = SystemColors.Highlight;
+            invoiceButton.FlatAppearance.BorderSize = 4;
+            invoiceButton.FlatStyle = FlatStyle.Flat;
+            invoiceButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            invoiceButton.Image = Properties.Resources.invoice;
+            invoiceButton.Location = new Point(429, 3);
+            invoiceButton.Name = "invoiceButton";
+            invoiceButton.Size = new Size(139, 74);
+            invoiceButton.TabIndex = 3;
+            invoiceButton.Text = "Invoice";
+            invoiceButton.TextImageRelation = TextImageRelation.TextBeforeImage;
+            invoiceButton.UseVisualStyleBackColor = false;
+            invoiceButton.Click += invoiceButton_Click;
             // 
-            // button3
+            // stockButton
             // 
-            button3.BackColor = SystemColors.MenuHighlight;
-            button3.Dock = DockStyle.Fill;
-            button3.FlatAppearance.BorderColor = SystemColors.Highlight;
-            button3.FlatAppearance.BorderSize = 4;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.Image = Properties.Resources.stock;
-            button3.Location = new Point(287, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(136, 74);
-            button3.TabIndex = 2;
-            button3.Text = "Stock";
-            button3.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button3.UseVisualStyleBackColor = false;
+            stockButton.BackColor = SystemColors.MenuHighlight;
+            stockButton.Dock = DockStyle.Fill;
+            stockButton.FlatAppearance.BorderColor = SystemColors.Highlight;
+            stockButton.FlatAppearance.BorderSize = 4;
+            stockButton.FlatStyle = FlatStyle.Flat;
+            stockButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            stockButton.Image = Properties.Resources.stock;
+            stockButton.Location = new Point(287, 3);
+            stockButton.Name = "stockButton";
+            stockButton.Size = new Size(136, 74);
+            stockButton.TabIndex = 2;
+            stockButton.Text = "Stock";
+            stockButton.TextImageRelation = TextImageRelation.TextBeforeImage;
+            stockButton.UseVisualStyleBackColor = false;
+            stockButton.Click += stockButton_Click;
             // 
             // productButton
             // 
@@ -153,22 +155,23 @@
             userButton.UseVisualStyleBackColor = false;
             userButton.Click += userButton_Click;
             // 
-            // button5
+            // salesButton
             // 
-            button5.BackColor = SystemColors.MenuHighlight;
-            button5.Dock = DockStyle.Fill;
-            button5.FlatAppearance.BorderColor = SystemColors.Highlight;
-            button5.FlatAppearance.BorderSize = 4;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.Image = Properties.Resources.sales;
-            button5.Location = new Point(3, 83);
-            button5.Name = "button5";
-            button5.Size = new Size(136, 74);
-            button5.TabIndex = 4;
-            button5.Text = "Sales";
-            button5.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button5.UseVisualStyleBackColor = false;
+            salesButton.BackColor = SystemColors.MenuHighlight;
+            salesButton.Dock = DockStyle.Fill;
+            salesButton.FlatAppearance.BorderColor = SystemColors.Highlight;
+            salesButton.FlatAppearance.BorderSize = 4;
+            salesButton.FlatStyle = FlatStyle.Flat;
+            salesButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            salesButton.Image = Properties.Resources.sales;
+            salesButton.Location = new Point(3, 83);
+            salesButton.Name = "salesButton";
+            salesButton.Size = new Size(136, 74);
+            salesButton.TabIndex = 4;
+            salesButton.Text = "Sales";
+            salesButton.TextImageRelation = TextImageRelation.TextBeforeImage;
+            salesButton.UseVisualStyleBackColor = false;
+            salesButton.Click += salesButton_Click;
             // 
             // categoryButton
             // 
@@ -225,10 +228,10 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private Button userButton;
-        private Button button4;
-        private Button button3;
+        private Button invoiceButton;
+        private Button stockButton;
         private Button productButton;
-        private Button button5;
+        private Button salesButton;
         private Button categoryButton;
         private Button supplierButton;
     }

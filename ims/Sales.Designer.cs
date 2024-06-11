@@ -42,6 +42,11 @@
             // 
             searchBox.Size = new Size(84, 23);
             // 
+            // formsHeadingLabel
+            // 
+            formsHeadingLabel.Size = new Size(89, 21);
+            formsHeadingLabel.Text = "Sales Form";
+            // 
             // Sales
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);

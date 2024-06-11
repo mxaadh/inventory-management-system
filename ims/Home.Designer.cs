@@ -44,6 +44,7 @@
             // 
             // leftPanel
             // 
+            leftPanel.BackColor = SystemColors.Desktop;
             leftPanel.Margin = new Padding(3, 5, 3, 5);
             // 
             // rightPanel
@@ -85,9 +86,9 @@
             // 
             // invoiceButton
             // 
-            invoiceButton.BackColor = SystemColors.MenuHighlight;
+            invoiceButton.BackColor = SystemColors.Control;
             invoiceButton.Dock = DockStyle.Fill;
-            invoiceButton.FlatAppearance.BorderColor = SystemColors.Highlight;
+            invoiceButton.FlatAppearance.BorderColor = SystemColors.Desktop;
             invoiceButton.FlatAppearance.BorderSize = 4;
             invoiceButton.FlatStyle = FlatStyle.Flat;
             invoiceButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -103,9 +104,9 @@
             // 
             // stockButton
             // 
-            stockButton.BackColor = SystemColors.MenuHighlight;
+            stockButton.BackColor = SystemColors.Control;
             stockButton.Dock = DockStyle.Fill;
-            stockButton.FlatAppearance.BorderColor = SystemColors.Highlight;
+            stockButton.FlatAppearance.BorderColor = SystemColors.Desktop;
             stockButton.FlatAppearance.BorderSize = 4;
             stockButton.FlatStyle = FlatStyle.Flat;
             stockButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -121,9 +122,9 @@
             // 
             // productButton
             // 
-            productButton.BackColor = SystemColors.MenuHighlight;
+            productButton.BackColor = SystemColors.Control;
             productButton.Dock = DockStyle.Fill;
-            productButton.FlatAppearance.BorderColor = SystemColors.Highlight;
+            productButton.FlatAppearance.BorderColor = SystemColors.Desktop;
             productButton.FlatAppearance.BorderSize = 4;
             productButton.FlatStyle = FlatStyle.Flat;
             productButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -139,9 +140,9 @@
             // 
             // userButton
             // 
-            userButton.BackColor = SystemColors.MenuHighlight;
+            userButton.BackColor = SystemColors.Control;
             userButton.Dock = DockStyle.Fill;
-            userButton.FlatAppearance.BorderColor = SystemColors.Highlight;
+            userButton.FlatAppearance.BorderColor = SystemColors.Desktop;
             userButton.FlatAppearance.BorderSize = 4;
             userButton.FlatStyle = FlatStyle.Flat;
             userButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -157,9 +158,9 @@
             // 
             // salesButton
             // 
-            salesButton.BackColor = SystemColors.MenuHighlight;
+            salesButton.BackColor = SystemColors.Control;
             salesButton.Dock = DockStyle.Fill;
-            salesButton.FlatAppearance.BorderColor = SystemColors.Highlight;
+            salesButton.FlatAppearance.BorderColor = SystemColors.Desktop;
             salesButton.FlatAppearance.BorderSize = 4;
             salesButton.FlatStyle = FlatStyle.Flat;
             salesButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -175,9 +176,9 @@
             // 
             // categoryButton
             // 
-            categoryButton.BackColor = SystemColors.MenuHighlight;
+            categoryButton.BackColor = SystemColors.Control;
             categoryButton.Dock = DockStyle.Fill;
-            categoryButton.FlatAppearance.BorderColor = SystemColors.Highlight;
+            categoryButton.FlatAppearance.BorderColor = SystemColors.Desktop;
             categoryButton.FlatAppearance.BorderSize = 4;
             categoryButton.FlatStyle = FlatStyle.Flat;
             categoryButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -193,9 +194,9 @@
             // 
             // supplierButton
             // 
-            supplierButton.BackColor = SystemColors.MenuHighlight;
+            supplierButton.BackColor = SystemColors.Control;
             supplierButton.Dock = DockStyle.Fill;
-            supplierButton.FlatAppearance.BorderColor = SystemColors.Highlight;
+            supplierButton.FlatAppearance.BorderColor = SystemColors.Desktop;
             supplierButton.FlatAppearance.BorderSize = 4;
             supplierButton.FlatStyle = FlatStyle.Flat;
             supplierButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);

@@ -66,12 +66,18 @@
             // 
             // backBtn
             // 
+            backBtn.BackColor = SystemColors.ControlText;
             backBtn.FlatAppearance.BorderSize = 0;
+            backBtn.Size = new Size(50, 38);
             backBtn.Click += backBtn_Click;
             // 
             // searchBox
             // 
             searchBox.Size = new Size(84, 23);
+            // 
+            // actionLeftPanel
+            // 
+            actionLeftPanel.Location = new Point(0, 38);
             // 
             // formsHeadingLabel
             // 
@@ -125,8 +131,13 @@
             // rightPanel
             // 
             rightPanel.Controls.Add(dataGridView1);
+            rightPanel.Location = new Point(229, 0);
             rightPanel.Size = new Size(571, 507);
             rightPanel.Controls.SetChildIndex(dataGridView1, 0);
+            // 
+            // panel1
+            // 
+            panel1.Size = new Size(229, 38);
             // 
             // dataGridView1
             // 
@@ -146,14 +157,14 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { supIDGV, supNameGV, supContectPersonGV, supPhone1GV, supPhone2GV, supAddressGV, supNTNGV, supStatusGV });
             dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 100);
+            dataGridView1.Location = new Point(0, 88);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(571, 407);
+            dataGridView1.Size = new Size(571, 419);
             dataGridView1.TabIndex = 3;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 

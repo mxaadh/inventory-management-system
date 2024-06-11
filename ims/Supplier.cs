@@ -68,7 +68,7 @@ namespace ims
                     // Insert Data
                     Insertion insertion = new Insertion();
                     insertion.InsertSupplier(nameTxt.Text, contectPersonTxt.Text, phone1Txt.Text, addressTxt.Text, status, phone2Txt_Text, ntnTxt_Text);
-                    // retrieval.showCategory(dataGridView1, catIDGV, catNameGV, catStatusGV);
+                    retrieval.showSupplier(dataGridView1, supIDGV, supNameGV, supContectPersonGV, supPhone1GV, supPhone2GV, supAddressGV, supNTNGV, supStatusGV);
                     Main.disable_reset(leftPanel);
                 }
                 else if (edit == 1)

@@ -92,6 +92,7 @@
             passwordText.Name = "passwordText";
             passwordText.Size = new Size(204, 23);
             passwordText.TabIndex = 6;
+            passwordText.UseSystemPasswordChar = true;
             passwordText.TextChanged += passwordText_TextChanged;
             // 
             // label3
